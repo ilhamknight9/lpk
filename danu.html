@@ -1,0 +1,942 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proposal Platform Wedding Digital - Danu</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', 'Segoe UI', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 950px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 60px 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 300px;
+            height: 300px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+        }
+
+        .header::after {
+            content: '';
+            position: absolute;
+            bottom: -20%;
+            left: 5%;
+            width: 200px;
+            height: 200px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .header-subtitle {
+            font-size: 1.1em;
+            opacity: 0.95;
+            margin-bottom: 20px;
+        }
+
+        .header-tag {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            margin-bottom: 20px;
+        }
+
+        .content {
+            padding: 50px 40px;
+        }
+
+        .greeting {
+            background: linear-gradient(135deg, #fff5f7 0%, #fffaf0 100%);
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 40px;
+            border-left: 5px solid #ff6b9d;
+        }
+
+        .greeting h2 {
+            color: #667eea;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+
+        .greeting p {
+            color: #555;
+            font-size: 1em;
+            line-height: 1.8;
+        }
+
+        .section {
+            margin-bottom: 45px;
+        }
+
+        .section-title {
+            font-size: 1.8em;
+            color: #667eea;
+            margin-bottom: 25px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .section-title::after {
+            content: '';
+            flex: 1;
+            height: 2px;
+            background: linear-gradient(90deg, #667eea, transparent);
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #667eea15 0%, #764ba215 100%);
+            border-left: 5px solid #667eea;
+            padding: 25px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+        }
+
+        .highlight-box h3 {
+            color: #667eea;
+            margin-bottom: 12px;
+            font-size: 1.1em;
+        }
+
+        .highlight-box p {
+            color: #555;
+            line-height: 1.8;
+        }
+
+        .pain-point {
+            background: linear-gradient(135deg, #fff5e6 0%, #ffe8cc 100%);
+            border-left: 5px solid #ffc107;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        .pain-point strong {
+            color: #d97706;
+        }
+
+        .solution-point {
+            background: linear-gradient(135deg, #e8f8f5 0%, #d4f4e8 100%);
+            border-left: 5px solid #27ae60;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        .solution-point strong {
+            color: #27ae60;
+        }
+
+        .packages {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .package {
+            border-radius: 15px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .package:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 50px rgba(0,0,0,0.15);
+        }
+
+        .package.standard {
+            border: 2px solid #ddd;
+            background: white;
+        }
+
+        .package.premium {
+            border: 3px solid #ffc107;
+            background: linear-gradient(135deg, #fffbf0 0%, #fff9e6 100%);
+            position: relative;
+        }
+
+        .premium-badge {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(135deg, #ffc107, #ffed4e);
+            color: #333;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 0.85em;
+        }
+
+        .package-header {
+            padding: 30px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .package.premium .package-header {
+            background: linear-gradient(135deg, #ffc107, #ffed4e);
+            color: #333;
+        }
+
+        .package-title {
+            font-size: 1.5em;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .package-desc {
+            font-size: 0.95em;
+            opacity: 0.9;
+        }
+
+        .price-section {
+            padding: 25px 30px;
+            text-align: center;
+            background: #f9f9f9;
+            border-bottom: 1px solid #eee;
+        }
+
+        .package.premium .price-section {
+            background: rgba(255, 193, 7, 0.1);
+        }
+
+        .price {
+            font-size: 2.2em;
+            font-weight: 700;
+            color: #667eea;
+            margin-bottom: 8px;
+        }
+
+        .package.premium .price {
+            color: #ffc107;
+        }
+
+        .price-note {
+            font-size: 0.9em;
+            color: #999;
+        }
+
+        .features {
+            padding: 30px;
+        }
+
+        .feature {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 14px;
+            font-size: 0.95em;
+            align-items: flex-start;
+        }
+
+        .feature-icon {
+            font-size: 1.3em;
+            min-width: 25px;
+            color: #27ae60;
+        }
+
+        .package-btn {
+            width: 100%;
+            padding: 14px;
+            border: none;
+            border-radius: 10px;
+            font-weight: 700;
+            cursor: pointer;
+            font-size: 1em;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-top: 20px;
+        }
+
+        .btn-standard {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+        }
+
+        .btn-standard:hover {
+            transform: scale(1.03);
+            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
+        }
+
+        .btn-premium {
+            background: linear-gradient(135deg, #ffc107, #ffed4e);
+            color: #333;
+            font-weight: 800;
+        }
+
+        .btn-premium:hover {
+            transform: scale(1.03);
+            box-shadow: 0 8px 20px rgba(255, 193, 7, 0.4);
+        }
+
+        .comparison {
+            margin-top: 40px;
+            overflow-x: auto;
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.95em;
+        }
+
+        .comparison-table th {
+            background: #667eea;
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .comparison-table td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .comparison-table tr:hover {
+            background: #f9f9f9;
+        }
+
+        .checkmark {
+            color: #27ae60;
+            font-weight: 700;
+        }
+
+        .timeline {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .timeline-item {
+            background: linear-gradient(135deg, #667eea15 0%, #764ba215 100%);
+            padding: 25px;
+            border-radius: 12px;
+            text-align: center;
+            border-left: 4px solid #667eea;
+        }
+
+        .timeline-num {
+            width: 45px;
+            height: 45px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.2em;
+            margin: 0 auto 12px;
+        }
+
+        .timeline-item h4 {
+            color: #667eea;
+            margin-bottom: 8px;
+            font-size: 0.95em;
+        }
+
+        .timeline-item p {
+            font-size: 0.85em;
+            color: #666;
+        }
+
+        .roi-box {
+            background: linear-gradient(135deg, #e8f8f5 0%, #d4f4e8 100%);
+            border-left: 5px solid #27ae60;
+            padding: 25px;
+            border-radius: 12px;
+            margin-top: 30px;
+        }
+
+        .roi-box h3 {
+            color: #27ae60;
+            margin-bottom: 15px;
+            font-size: 1.2em;
+        }
+
+        .roi-item {
+            margin-bottom: 12px;
+            font-size: 0.95em;
+        }
+
+        .roi-item strong {
+            color: #27ae60;
+        }
+
+        .contact-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px;
+            border-radius: 15px;
+            margin-top: 40px;
+        }
+
+        .contact-section h2 {
+            color: white;
+            margin-bottom: 25px;
+            font-size: 1.5em;
+        }
+
+        .contact-info {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .contact-item {
+            background: rgba(255,255,255,0.1);
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .contact-item strong {
+            font-size: 1.05em;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .contact-item p {
+            font-size: 0.95em;
+            opacity: 0.95;
+        }
+
+        .wa-badge {
+            display: inline-block;
+            background: #25d366;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-weight: 700;
+            margin-top: 8px;
+            font-size: 0.9em;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: #25d366;
+            color: white;
+            padding: 14px 32px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 700;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .cta-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(37, 211, 102, 0.4);
+        }
+
+        .footer {
+            background: #f9f9f9;
+            padding: 30px 40px;
+            text-align: center;
+            border-top: 2px solid #eee;
+            color: #666;
+            font-size: 0.9em;
+        }
+
+        @media (max-width: 768px) {
+            .packages {
+                grid-template-columns: 1fr;
+            }
+
+            .timeline {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-info {
+                grid-template-columns: 1fr;
+            }
+
+            .header {
+                padding: 40px 25px;
+            }
+
+            .header h1 {
+                font-size: 1.8em;
+            }
+
+            .content {
+                padding: 30px 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- HEADER -->
+        <div class="header">
+            <div class="header-content">
+                <div class="header-tag">✨ Proposal Spesial Untuk Anda ✨</div>
+                <h1>💍 Platform Wedding Digital Premium</h1>
+                <p class="header-subtitle">Ubah Bisnis Undangan Digital Jadi Mesin Penghasil Uang! 🚀</p>
+            </div>
+        </div>
+
+        <!-- CONTENT -->
+        <div class="content">
+            <!-- GREETING -->
+            <div class="greeting">
+                <h2>Halo Danu! 👋</h2>
+                <p>Saya Ilham Rusli. Saya tahu Danu pengen bangun platform wedding digital yang bisa scale tanpa effort besar. Proposal ini solusinya! Dalam 7 minggu, platform Danu siap. Dalam 3 bulan, Danu bisa earning ratusan juta. Mari kita lihat caranya! 👇</p>
+            </div>
+
+            <!-- KERESAHAN & SOLUSI -->
+            <div class="section">
+                <div class="section-title">😰 Masalah Yang Anda Hadapi</div>
+                
+                <div class="pain-point">
+                    <strong>❌ Scalability Problem:</strong> Kalau design manual, tidak bisa handle banyak order. Ini hambat growth bisnis Anda.
+                </div>
+                
+                <div class="solution-point">
+                    <strong>✅ Solusi Kami:</strong> Sistem cloning template otomatis. Customer ambil data → pilih template → klik publish. Selesai dalam 5 menit!
+                </div>
+
+                <div class="pain-point">
+                    <strong>❌ Cost Problem:</strong> Hire designer/developer = biaya operasional besar. Margin profit jadi kecil.
+                </div>
+                
+                <div class="solution-point">
+                    <strong>✅ Solusi Kami:</strong> Platform model, bukan service. Biaya minimal, profit 90-95% per transaksi. Semakin banyak order, semakin untung!
+                </div>
+
+                <div class="pain-point">
+                    <strong>❌ Kompetitor Problem:</strong> Pasar undangan ramai. Sulit differentiate dan charge premium price.
+                </div>
+                
+                <div class="solution-point">
+                    <strong>✅ Solusi Kami:</strong> Template adat eksklusif (Paket Premium). Tidak ada kompetitor yang punya ini. Anda bisa charge 3-5x lebih mahal!
+                </div>
+            </div>
+
+            <!-- PAKET PILIHAN -->
+            <div class="section">
+                <div class="section-title">🎁 2 Paket Pilihan</div>
+                
+                <div class="packages">
+                    <!-- PAKET 1 -->
+                    <div class="package standard">
+                        <div class="package-header">
+                            <div class="package-title">⭐ STARTER</div>
+                            <div class="package-desc">Platform Modern & Cepat</div>
+                        </div>
+                        <div class="price-section">
+                            <div class="price">Rp 9.8 Juta</div>
+                            <div class="price-note">Harga beli platform (one-time)</div>
+                            <p style="margin-top: 12px; color: #27ae60; font-weight: 700; font-size: 0.95em;">Jual ke customer: Rp 149.000 per template</p>
+                        </div>
+                        <div class="features">
+                            <div class="feature">
+                                <div class="feature-icon">✓</div>
+                                <span><strong>60+ Template Modern</strong> - Siap pakai, animasi smooth</span>
+                            </div>
+                            <div class="feature">
+                                <div class="feature-icon">✓</div>
+                                <span><strong>20+ Widget Elementor</strong> - Audio, RSVP, countdown, dll</span>
+                            </div>
+                            <div class="feature">
+                                <div class="feature-icon">✓</div>
+                                <span><strong>Dashboard Admin</strong> - Clone template, publish instant</span>
+                            </div>
+                            <div class="feature">
+                                <div class="feature-icon">✓</div>
+                                <span><strong>WhatsApp Integration</strong> - Auto send undangan</span>
+                            </div>
+                            <div class="feature">
+                                <div class="feature-icon">✓</div>
+                                <span><strong>Analytics Real-time</strong> - Tracking tamu yang buka</span>
+                            </div>
+                            <div class="feature">
+                                <div class="feature-icon">✓</div>
+                                <span><strong>Domain & Hosting</strong> - Premium, fast, reliable</span>
+                            </div>
+                            <div class="feature">
+                                <div class="feature-icon">✓</div>
+                                <span><strong>Training & Support</strong> - 24/7 WhatsApp</span>
+                            </div>
+                            <div class="feature">
+                                <div class="feature-icon">✓</div>
+                                <span><strong>1 Tahun Free Maintenance</strong> - Update & bug fix</span>
+                            </div>
+
+                            <div class="roi-box">
+                                <strong>💰 Breakeven & Revenue:</strong>
+                                <p style="margin-top: 8px;"><strong style="color: #27ae60;">Breakeven: 17 customers</strong> (~1-2 hari!)</p>
+                                <p style="margin-top: 8px;">Profit per customer: <strong style="color: #27ae60;">Rp 149.000</strong></p>
+                                <p style="margin-top: 8px; border-top: 1px solid #27ae60; padding-top: 8px;">50 customer/bulan = <strong style="color: #27ae60;">Rp 7.45 juta/bulan</strong></p>
+                                <p style="margin-top: 5px;">100 customer/bulan = <strong style="color: #27ae60;">Rp 14.9 juta/bulan</strong></p>
+                                <p style="margin-top: 15px; font-size: 0.9em; color: #555;">🔥 Entry-level terbaik! Investasi minimal, profit solid!</p>
+                            </div>
+
+                            <button class="package-btn btn-standard">Pilih Paket Ini</button>
+                        </div>
+                    </div>
+
+                    <!-- PAKET 2 -->
+                    <div class="package premium">
+                        <div class="premium-badge">⭐ PALING UNTUNG</div>
+                        <div class="package-header">
+                            <div class="package-title">🔥 PREMIUM</div>
+                            <div class="package-desc">Platform + Template Adat Eksklusif</div>
+                        </div>
+                        <div class="price-section">
+                            <div class="price">Rp 13.9 Juta</div>
+                            <div class="price-note">Harga beli platform (one-time)</div>
+                            <p style="margin-top: 12px; color: #27ae60; font-weight: 700; font-size: 0.95em;">Jual ke customer: Rp 189.000 per template</p>
+                        </div>
+                        <div class="features">
+                            <div class="feature">
+                                <div class="feature-icon">✓</div>
+                                <span><strong>Semua dari Paket Starter</strong></span>
+                            </div>
+                            <div class="feature">
+                                <div class="feature-icon">✓</div>
+                                <span><strong>+ 10 Template Adat Eksklusif</strong> - Minang, Batak, Jawa, Sunda, Bali, Betawi, Bugis, Dayak!</span>
+                            </div>
+                            <div class="feature">
+                                <div class="feature-icon">✓</div>
+                                <span><strong>Total 70+ Template</strong> - Paling lengkap di industri</span>
+                            </div>
+                            <div class="feature">
+                                <div class="feature-icon">✓</div>
+                                <span><strong>Luxee Adat Toolkit</strong> - Social proof generator, auto navigation</span>
+                            </div>
+                            <div class="feature">
+                                <div class="feature-icon">✓</div>
+                                <span><strong>21 Audio BGM + 60 Stock Photo</strong> - Marketing materials included</span>
+                            </div>
+                            <div class="feature">
+                                <div class="feature-icon">✓</div>
+                                <span><strong>Business Coaching</strong> - Maksimalkan revenue Anda</span>
+                            </div>
+                            <div class="feature">
+                                <div class="feature-icon">✓</div>
+                                <span><strong>2 Tahun Free Maintenance</strong> - Extended support</span>
+                            </div>
+
+                            <div class="roi-box">
+                                <strong>💰 Breakeven & Revenue:</strong>
+                                <p style="margin-top: 8px;"><strong style="color: #27ae60;">Breakeven: 16 customers</strong> (SUPER CEPAT! ~1 hari!)</p>
+                                <p style="margin-top: 8px;">Profit per customer: <strong style="color: #27ae60;">Rp 189.000</strong></p>
+                                <p style="margin-top: 8px; border-top: 1px solid #27ae60; padding-top: 8px;">50 customer/bulan = <strong style="color: #27ae60;">Rp 9.45 juta/bulan</strong></p>
+                                <p style="margin-top: 5px;">100 customer/bulan = <strong style="color: #27ae60;">Rp 18.9 juta/bulan</strong></p>
+                                <p style="margin-top: 5px;">200 customer/bulan = <strong style="color: #27ae60;">Rp 37.8 juta/bulan</strong></p>
+                                <p style="margin-top: 15px; font-size: 0.9em; color: #555;">🔥 Harga jual lebih tinggi = profit lebih banyak & lebih mudah jual!</p>
+                            </div>
+
+                            <button class="package-btn btn-premium">Pilih Premium!</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="highlight-box" style="margin-top: 30px;">
+                    <h3>💡 MODEL BISNIS INI SUPER GENIUS!</h3>
+                    <p><strong>Investment minimal (Rp 9.8-13.9 juta)</strong>, breakeven dalam 1-2 hari (cuma 17-20 customers), terus pure profit Rp 149.000 per customer! Semakin banyak customer, semakin banyak profit. This is the PERFECT BUSINESS MODEL! 🚀</p>
+                </div>
+            </div>
+
+            <!-- BUSINESS MODEL EXPLANATION -->
+            <div class="section">
+                <div class="section-title">🎯 Cara Kerjanya (Business Model)</div>
+                
+                <div class="highlight-box">
+                    <h3>📊 Ringkas Banget:</h3>
+                    <p>Danu beli platform dari kami (Rp 9.8-13.9 juta), terus jual ke customer dengan harga Rp 149.000 (Starter) atau Rp 189.000 (Premium) per template. Itu aja! Profit per customer sesuai harga jual. Semakin banyak jual, semakin banyak untung.</p>
+                </div>
+
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 25px;">
+                    <div class="highlight-box" style="border-left: 5px solid #667eea;">
+                        <h3>📊 PAKET STARTER (Harga Jual Rp 149k)</h3>
+                        <p><strong>30 customer/bulan:</strong> Rp 4.47 juta/bulan (Rp 53.64 juta/tahun)</p>
+                        <p style="margin-top: 8px;"><strong>50 customer/bulan:</strong> Rp 7.45 juta/bulan (Rp 89.4 juta/tahun)</p>
+                        <p style="margin-top: 8px;"><strong>100 customer/bulan:</strong> Rp 14.9 juta/bulan (Rp 178.8 juta/tahun)</p>
+                        <p style="margin-top: 8px; font-size: 0.9em; color: #555;">✅ Entry-level terbaik untuk quick start!</p>
+                    </div>
+                    <div class="highlight-box" style="border-left: 5px solid #ffc107;">
+                        <h3>📊 PAKET PREMIUM (Harga Jual Rp 189k)</h3>
+                        <p><strong>30 customer/bulan:</strong> Rp 5.67 juta/bulan (Rp 68.04 juta/tahun)</p>
+                        <p style="margin-top: 8px;"><strong>50 customer/bulan:</strong> Rp 9.45 juta/bulan (Rp 113.4 juta/tahun)</p>
+                        <p style="margin-top: 8px;"><strong>100 customer/bulan:</strong> Rp 18.9 juta/bulan (Rp 226.8 juta/tahun)</p>
+                        <p style="margin-top: 8px; font-size: 0.9em; color: #555;">🔥 Harga jual lebih tinggi = profit lebih besar!</p>
+                    </div>
+                </div>
+
+                <div class="pain-point" style="margin-top: 25px;">
+                    <strong>📌 STRATEGI PRICING:</strong> Paket Starter untuk target mass-market budget-conscious. Paket Premium untuk target market yang willing-to-pay lebih tinggi (karena template adat eksklusif). Danu bisa pilih salah satu atau jual kedua-duanya!
+                </div>
+
+            </div>
+
+            <!-- TIMELINE -->
+            <div class="section">
+                <div class="section-title">⏱️ Timeline Implementasi</div>
+                <p style="margin-bottom: 20px;">Dari mulai sampai launch hanya 7 minggu. Cepat banget!</p>
+                
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-num">1</div>
+                        <h4>Minggu 1-2</h4>
+                        <p>Kick-off & Planning</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-num">2</div>
+                        <h4>Minggu 3-4</h4>
+                        <p>Development</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-num">3</div>
+                        <h4>Minggu 5-6</h4>
+                        <p>Testing & QA</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-num">4</div>
+                        <h4>Minggu 7</h4>
+                        <p>Training & Launch!</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- COMPARISON TABLE -->
+            <div class="section">
+                <div class="section-title">📊 Perbandingan Cepat</div>
+                
+                <div class="comparison">
+                    <table class="comparison-table">
+                        <tr>
+                            <th>Fitur</th>
+                            <th>Starter</th>
+                            <th>Premium</th>
+                        </tr>
+                        <tr>
+                            <td><strong>Template Modern</strong></td>
+                            <td class="checkmark">60+</td>
+                            <td class="checkmark">60+</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Template Adat Eksklusif</strong></td>
+                            <td>❌</td>
+                            <td class="checkmark">10+</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Total Template</strong></td>
+                            <td class="checkmark">60+</td>
+                            <td class="checkmark">70+</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Widget Elementor</strong></td>
+                            <td class="checkmark">20+</td>
+                            <td class="checkmark">20+ + Toolkit</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Audio BGM</strong></td>
+                            <td>❌</td>
+                            <td class="checkmark">21 Audio</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Stock Photo</strong></td>
+                            <td>❌</td>
+                            <td class="checkmark">60 Foto</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Training</strong></td>
+                            <td class="checkmark">Standard</td>
+                            <td class="checkmark">Extended + Coaching</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Maintenance Free</strong></td>
+                            <td class="checkmark">1 Tahun</td>
+                            <td class="checkmark">2 Tahun</td>
+                        </tr>
+                        <tr style="background: #f0f7ff; font-weight: 700;">
+                            <td><strong>Harga Pembelian</strong></td>
+                            <td>Rp 9.8 Juta</td>
+                            <td>Rp 13.9 Juta</td>
+                        </tr>
+                        <tr style="background: #f0f7ff; font-weight: 700;">
+                            <td><strong>Harga Jual ke Customer</strong></td>
+                            <td class="checkmark">Rp 149.000</td>
+                            <td class="checkmark">Rp 189.000</td>
+                        </tr>
+                        <tr style="background: #fff5e6; font-weight: 700;">
+                            <td><strong>Breakeven Point</strong></td>
+                            <td class="checkmark">17 customers</td>
+                            <td class="checkmark">20 customers</td>
+                        </tr>
+                        <tr style="background: #fff5e6; font-weight: 700;">
+                            <td><strong>Waktu Breakeven</strong></td>
+                            <td class="checkmark">1-2 hari</td>
+                            <td class="checkmark">1-2 hari</td>
+                        </tr>
+                        <tr style="background: #e8f8f5; font-weight: 700;">
+                            <td><strong>Revenue 50 customer/bulan</strong></td>
+                            <td class="checkmark">Rp 7.45 juta</td>
+                            <td class="checkmark">Rp 9.45 juta</td>
+                        </tr>
+                        <tr style="background: #e8f8f5; font-weight: 700;">
+                            <td><strong>Revenue 100 customer/bulan</strong></td>
+                            <td class="checkmark">Rp 14.9 juta</td>
+                            <td class="checkmark">Rp 18.9 juta</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            <!-- WHY US -->
+            <div class="section">
+                <div class="section-title">❓ Starter atau Premium?</div>
+                
+                <div class="highlight-box">
+                    <h3>💡 Bagaimana Memilih?</h3>
+                    <p><strong>PAKET STARTER (Rp 9.8 Juta, jual Rp 149.000):</strong>
+                    <ul style="margin-top: 12px; margin-left: 20px;">
+                        <li>Cocok untuk quick start & test market</li>
+                        <li>Target: mass market, budget-conscious customer</li>
+                        <li>Harga jual lebih terjangkau = volume penjualan lebih tinggi</li>
+                        <li>Breakeven: 17 customers (~1-2 hari)</li>
+                    </ul>
+                    <br/>
+                    <strong>PAKET PREMIUM (Rp 13.9 Juta, jual Rp 189.000):</strong>
+                    <ul style="margin-top: 12px; margin-left: 20px;">
+                        <li>Template adat eksklusif = differentiator kuat</li>
+                        <li>Target: middle-class yang willing-to-pay lebih tinggi</li>
+                        <li>Harga jual lebih tinggi = profit lebih besar per customer</li>
+                        <li>Breakeven: 16 customers (~1 hari, lebih cepat!)</li>
+                        <li>Positioning sebagai market leader</li>
+                    </ul></p>
+                </div>
+                
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 25px;">
+                    <div class="highlight-box">
+                        <h3>⭐ Pilih Starter Jika:</h3>
+                        <p>
+                            • Ingin investment MINIMAL<br/>
+                            • Target mass market<br/>
+                            • Fokus pada VOLUME penjualan<br/>
+                            • Ingin quick start ASAP
+                        </p>
+                    </div>
+                    <div class="highlight-box">
+                        <h3>🔥 Pilih Premium Jika:</h3>
+                        <p>
+                            • Ingin profit lebih BESAR per customer<br/>
+                            • Mau jadi market leader<br/>
+                            • Target middle-class market<br/>
+                            • Long-term growth strategy
+                        </p>
+                    </div>
+                </div>
+            </div>
+                
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                    <div class="highlight-box">
+                        <h3>⚡ Pengalaman Terbukti</h3>
+                        <p>Portfolio klien-klien sukses yang udah pakai platform serupa.</p>
+                    </div>
+                    <div class="highlight-box">
+                        <h3>💼 Business Focused</h3>
+                        <p>Kami fokus pada revenue & profit Anda, bukan hanya teknis.</p>
+                    </div>
+                    <div class="highlight-box">
+                        <h3>🎯 USP Yang Kuat</h3>
+                        <p>Template adat = diferensiator yang tidak ada kompetitor lain.</p>
+                    </div>
+                    <div class="highlight-box">
+                        <h3>🚀 Fast Turnaround</h3>
+                        <p>7 minggu dari kick-off sampai launch. Super cepat!</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CONTACT SECTION -->
+            <div class="contact-section">
+                <h2>☎️ Hubungi Saya Langsung!</h2>
+                <p style="margin-bottom: 25px; font-size: 1.05em;">Jangan tunda lagi. Ini kesempatan emas untuk scale bisnis. Chat saya sekarang untuk diskusi detail & konsultasi gratis (no charge sama sekali).</p>
+                
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <strong>💬 WhatsApp (Fast Response)</strong>
+                        <p>085782030090</p>
+                        <span class="wa-badge">Respons < 1 jam</span>
+                    </div>
+                    <div class="contact-item">
+                        <strong>📧 Email</strong>
+                        <p>ilham_rusli@yahoo.com</p>
+                    </div>
+                </div>
+
+                <a href="https://wa.me/6285782030090" class="cta-button">💬 Chat WhatsApp Sekarang</a>
+            </div>
+
+            <!-- CLOSING -->
+            <div style="text-align: center; margin-top: 40px; padding: 30px; background: linear-gradient(135deg, #e8f8f5, #d4f4e8); border-radius: 12px;">
+                <h3 style="color: #27ae60; margin-bottom: 15px;">👋 Kesimpulannya...</h3>
+                <p style="color: #333; margin-bottom: 15px; font-size: 0.95em;">Model ini PERFECT untuk Danu. Investment minimal (Rp 9.8-13.9 juta), breakeven SUPER CEPAT (16-17 customers), terus pure profit Rp 149-189k per customer. Skalanya unlimited - semakin banyak jual, semakin untung. Tidak ada limit!</p>
+                <p style="color: #555; font-size: 0.95em; margin-bottom: 15px;"><strong>Paket Starter worst case</strong>: 30 customer/bulan = Rp 4.47 juta/bulan</p>
+                <p style="color: #555; font-size: 0.95em;"><strong>Paket Premium best case</strong>: 100 customer/bulan = Rp 18.9 juta/bulan</p>
+                <p style="color: #999; font-size: 0.9em; margin-top: 20px;">Jadi, mari kita action ini! Chat Ilham sekarang untuk kick-off. 🚀</p>
+            </div>
+        </div>
+
+        <!-- FOOTER -->
+        <div class="footer">
+            <p><strong>Ilham Rusli</strong> | Digital Solutions Expert</p>
+            <p>WA: 085782030090 | Email: ilham_rusli@yahoo.com</p>
+            <p style="margin-top: 15px; font-style: italic;">Dibuat dengan ❤️ untuk kesuksesan bisnis Anda</p>
+        </div>
+    </div>
+</body>
+</html>
