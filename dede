@@ -1,0 +1,487 @@
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Segoe UI',sans-serif;background:#1a2e1a;color:#2d3a2d;line-height:1.7}
+.c{max-width:1050px;margin:0 auto;padding:15px}
+
+/* HERO */
+.hero{background:linear-gradient(135deg,#1a2e1a 0%,#2d4a2d 40%,#3d6b3d 100%);color:#fff;padding:50px 30px;border-radius:12px;margin-bottom:20px;text-align:center;position:relative;overflow:hidden}
+.hero::before{content:'🏔️⛺🌲🏕️🌿🔥';position:absolute;top:10px;left:50%;transform:translateX(-50%);font-size:28px;letter-spacing:15px;opacity:.3}
+.hero h1{font-size:30px;margin:30px 0 8px;letter-spacing:1px}
+.hero .sub{color:#a8d5a8;font-size:16px;margin-bottom:5px}
+.hero .client{background:rgba(255,255,255,.15);display:inline-block;padding:8px 25px;border-radius:30px;margin-top:12px;font-size:14px;backdrop-filter:blur(5px)}
+
+/* SECTIONS */
+.s{background:#fff;padding:28px;border-radius:12px;margin-bottom:18px;box-shadow:0 4px 20px rgba(0,0,0,.15)}
+.s h2{color:#2d4a2d;font-size:21px;margin-bottom:15px;padding-bottom:10px;border-bottom:3px solid #e8a840;display:flex;align-items:center;gap:10px}
+
+/* INTRO */
+.intro-msg{background:linear-gradient(135deg,#f0f7f0,#e8f5e8);padding:20px;border-radius:8px;border-left:4px solid #3d6b3d;color:#2d3a2d;font-size:14px;margin-bottom:15px}
+
+/* PAIN POINTS */
+.pain{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:15px 0}
+@media(max-width:600px){.pain{grid-template-columns:1fr}}
+.pain-item{padding:12px 15px;border-radius:8px;font-size:13px;display:flex;align-items:center;gap:10px}
+.pain-item.bad{background:#fef2f2;border-left:3px solid #dc2626;color:#7f1d1d}
+.pain-item.good{background:#f0fdf4;border-left:3px solid #16a34a;color:#14532d}
+
+/* NUMBERS */
+.nums{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:15px 0}
+@media(max-width:600px){.nums{grid-template-columns:1fr}}
+.num-card{padding:20px;border-radius:10px;text-align:center;color:#fff}
+.num-card.red{background:linear-gradient(135deg,#dc2626,#b91c1c)}
+.num-card.green{background:linear-gradient(135deg,#16a34a,#15803d)}
+.num-card.gold{background:linear-gradient(135deg,#e8a840,#ca8a04)}
+.num-card .big{font-size:28px;font-weight:800}
+.num-card .lbl{font-size:11px;opacity:.9;margin-top:4px}
+
+/* PACKAGES */
+.pkgs{display:grid;grid-template-columns:repeat(3,1fr);gap:15px;margin:15px 0}
+@media(max-width:768px){.pkgs{grid-template-columns:1fr}}
+.pkg{border-radius:10px;overflow:hidden;border:2px solid #e5e7eb;transition:transform .3s,box-shadow .3s}
+.pkg:hover{transform:translateY(-4px);box-shadow:0 8px 25px rgba(0,0,0,.12)}
+.pkg.feat{border-color:#e8a840;transform:scale(1.03)}
+.pkg.feat:hover{transform:scale(1.03) translateY(-4px)}
+.pkg-head{padding:20px;text-align:center;color:#fff}
+.pkg-head.t1{background:linear-gradient(135deg,#3d6b3d,#2d4a2d)}
+.pkg-head.t2{background:linear-gradient(135deg,#e8a840,#ca8a04)}
+.pkg-head.t3{background:linear-gradient(135deg,#5b3a1a,#3d2810)}
+.pkg-name{font-size:20px;font-weight:800;letter-spacing:1px}
+.pkg-price{font-size:28px;font-weight:800;margin:8px 0 4px}
+.pkg-badge{background:rgba(255,255,255,.25);padding:3px 14px;border-radius:20px;font-size:11px;display:inline-block}
+.pkg-body{padding:18px}
+.pkg-body ul{list-style:none;padding:0}
+.pkg-body li{padding:6px 0;font-size:13px;color:#444;display:flex;align-items:flex-start;gap:8px}
+.pkg-body li::before{content:"✓";color:#16a34a;font-weight:700;flex-shrink:0}
+.pkg.feat .pkg-body li::before{color:#e8a840}
+.pkg-cta{display:block;margin:12px 18px 18px;padding:10px;border:none;border-radius:6px;font-size:13px;font-weight:700;cursor:pointer;text-align:center;color:#fff}
+.pkg-cta.c1{background:#3d6b3d}
+.pkg-cta.c2{background:#e8a840}
+.pkg-cta.c3{background:#5b3a1a}
+
+/* COMPARISON TABLE */
+.tbl{width:100%;border-collapse:collapse;margin:15px 0;font-size:13px}
+.tbl th{background:#2d4a2d;color:#fff;padding:10px;text-align:left}
+.tbl td{padding:10px;border-bottom:1px solid #eee}
+.tbl tr:nth-child(even){background:#f9faf9}
+.tbl .ck{color:#16a34a;font-weight:700;font-size:16px}
+
+/* TOOLS */
+.tools{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px;margin:15px 0}
+.tool{background:linear-gradient(135deg,#f0f7f0,#e8f5e8);padding:14px;border-radius:8px;text-align:center;border:1px solid #d1e7d1}
+.tool .ico{font-size:24px;margin-bottom:5px}
+.tool .nm{font-weight:700;color:#2d4a2d;font-size:13px}
+.tool .fn{color:#666;font-size:11px}
+
+/* TIMELINE */
+.tl-item{display:flex;gap:15px;margin-bottom:18px;padding-bottom:18px;border-bottom:1px dashed #d1e7d1}
+.tl-item:last-child{border:none}
+.tl-dot{background:#3d6b3d;color:#fff;width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;flex-shrink:0;font-size:16px}
+.tl-txt h4{color:#2d4a2d;font-size:14px;margin-bottom:3px}
+.tl-txt p{color:#666;font-size:13px}
+
+/* PRICING */
+.price-box{background:linear-gradient(135deg,#f0f7f0,#e8f5e8);padding:20px;border-radius:10px;margin:15px 0;border:2px solid #3d6b3d}
+.price-box h4{color:#2d4a2d;margin-bottom:10px;font-size:15px}
+.price-row{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid #d1e7d1;font-size:13px}
+.price-row:last-child{border:none;font-weight:700;color:#2d4a2d;font-size:15px}
+.price-row .amt{color:#e8a840;font-weight:700}
+
+/* HIGHLIGHT */
+.hl{padding:15px 18px;border-radius:8px;margin:15px 0;font-size:13px;line-height:1.7}
+.hl.camp{background:linear-gradient(135deg,#fef9ee,#fdf0d5);border-left:4px solid #e8a840}
+.hl.forest{background:linear-gradient(135deg,#f0f7f0,#e0f0e0);border-left:4px solid #3d6b3d}
+
+/* BONUS */
+.bonus{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:15px 0}
+@media(max-width:600px){.bonus{grid-template-columns:1fr}}
+.bonus-item{background:#f0f7f0;padding:10px 14px;border-radius:6px;font-size:12px;color:#2d4a2d;display:flex;align-items:center;gap:8px}
+
+/* FOOTER */
+.footer{background:linear-gradient(135deg,#1a2e1a,#2d4a2d);color:#fff;padding:30px;border-radius:12px;text-align:center}
+.footer h3{color:#e8a840;margin-bottom:12px;font-size:18px}
+.footer p{font-size:13px;color:#a8d5a8;margin-bottom:8px}
+.contact-row{display:flex;justify-content:center;gap:25px;flex-wrap:wrap;margin:15px 0}
+.contact-row a{color:#e8a840;text-decoration:none;font-weight:700;font-size:14px;transition:color .3s}
+.contact-row a:hover{color:#fff}
+.footer .sign{margin-top:18px;padding-top:15px;border-top:1px solid rgba(255,255,255,.15)}
+.footer .sign .name{font-size:16px;font-weight:700;color:#fff}
+.footer .sign .role{font-size:12px;color:#a8d5a8}
+</style>
+</head>
+<body>
+<div class="c">
+
+<!-- HERO -->
+<div class="hero">
+<h1>⛺ PROPOSAL PENAWARAN</h1>
+<div class="sub">Website E-Commerce Outdoor & Camping</div>
+<div class="sub" style="font-size:13px;opacity:.7">Tech Stack 100% Lokal Indonesia 🇮🇩</div>
+<div class="client">Untuk: <strong>Dede</strong> · Dari: <strong>Ilham Rusli</strong> · 14 Mei 2026</div>
+</div>
+
+<!-- INTRO -->
+<div class="s">
+<h2>👋 Halo Dede!</h2>
+<div class="intro-msg">
+Toko Shopee kamu udah terbukti laris dengan traffic konsisten setiap hari. Tapi <strong>fee 20-30%</strong> itu kebanyakan kebuang ke Shopee. Saatnya punya <strong>website sendiri</strong> yang lebih menguntungkan, dengan automation yang powerful dan customer base 100% milik kamu!
+</div>
+<div class="nums">
+<div class="num-card red">
+<div class="big">20-30%</div>
+<div class="lbl">Fee Shopee yang terbuang setiap bulan</div>
+</div>
+<div class="num-card green">
+<div class="big">+Rp 15-25 Jt</div>
+<div class="lbl">Profit tambahan/bulan dari fee saving</div>
+</div>
+<div class="num-card gold">
+<div class="big">2-4 Minggu</div>
+<div class="lbl">Website balik modal!</div>
+</div>
+</div>
+</div>
+
+<!-- MASALAH vs SOLUSI -->
+<div class="s">
+<h2>🔥 Masalah Shopee vs Solusi Website</h2>
+<div class="pain">
+<div class="pain-item bad">❌ Fee 20-30% potong profit</div>
+<div class="pain-item good">✅ Fee hanya 2-3% (payment gateway)</div>
+<div class="pain-item bad">❌ Customer milik Shopee</div>
+<div class="pain-item good">✅ Database 100% milik Dede</div>
+<div class="pain-item bad">❌ Tidak bisa automation</div>
+<div class="pain-item good">✅ Full automation (Email, WA, CRM)</div>
+<div class="pain-item bad">❌ Branding tenggelam</div>
+<div class="pain-item good">✅ Brand premium & profesional</div>
+<div class="pain-item bad">❌ Sulit retargeting</div>
+<div class="pain-item good">✅ Pixel tracking + retargeting ads</div>
+<div class="pain-item bad">❌ Repeat order susah</div>
+<div class="pain-item good">✅ Loyalty program + membership</div>
+</div>
+</div>
+
+<!-- PAKET -->
+<div class="s">
+<h2>🎯 Pilihan Paket</h2>
+<div class="pkgs">
+
+<!-- FOUNDRY -->
+<div class="pkg">
+<div class="pkg-head t1">
+<div class="pkg-name">⛺ FOUNDRY</div>
+<div class="pkg-price">Rp 7.5 Jt</div>
+<div class="pkg-badge">Starter</div>
+</div>
+<div class="pkg-body">
+<ul>
+<li>Website e-commerce modern</li>
+<li>Upload 100 produk</li>
+<li>Midtrans payment gateway</li>
+<li>JNE/J&T ongkir otomatis</li>
+<li>Mobile responsive</li>
+<li>Google Analytics setup</li>
+<li>Training + support 14 hari</li>
+<li><strong>FREE maintenance 1 bulan!</strong></li>
+</ul>
+</div>
+<div class="pkg-cta c1">Lihat Detail</div>
+</div>
+
+<!-- TITANIUM -->
+<div class="pkg feat">
+<div class="pkg-head t2">
+<div class="pkg-name">🏔️ TITANIUM</div>
+<div class="pkg-price">Rp 9.8 Jt</div>
+<div class="pkg-badge">⭐ Recommended untuk Dede</div>
+</div>
+<div class="pkg-body">
+<ul>
+<li><strong>Semua fitur Foundry +</strong></li>
+<li>Produk unlimited</li>
+<li>Cloudflare CDN (speed 2x)</li>
+<li>WhatsApp automation (Wabiz)</li>
+<li>Email automation (Duniakode)</li>
+<li>AI Chatbot CS (Kata.ai)</li>
+<li>CRM customer (Mekari)</li>
+<li>Abandoned cart recovery</li>
+<li>Loyalty & membership system</li>
+<li>Cross-sell & upsell</li>
+<li>Retargeting pixel setup</li>
+<li>Support 30 hari</li>
+<li><strong>FREE maintenance 3 bulan!</strong></li>
+</ul>
+</div>
+<div class="pkg-cta c2">Pilih Paket Ini</div>
+</div>
+
+<!-- INDUSTRIAL PRIME -->
+<div class="pkg">
+<div class="pkg-head t3">
+<div class="pkg-name">🏭 INDUSTRIAL PRIME</div>
+<div class="pkg-price">Rp 13.9 Jt</div>
+<div class="pkg-badge">Enterprise</div>
+</div>
+<div class="pkg-body">
+<ul>
+<li><strong>Semua fitur Titanium +</strong></li>
+<li>VPS Cloud (auto-scale)</li>
+<li>FunnelKit checkout optimization</li>
+<li>Shipper (semua kurir)</li>
+<li>AI Chatbot advanced (Kata.ai Pro)</li>
+<li>Mekari CRM Pro unlimited</li>
+<li>Advanced analytics dashboard</li>
+<li>Heatmap & session recording</li>
+<li>Dedicated account manager</li>
+<li>Influencer campaign setup</li>
+<li>Google Ads setup</li>
+<li>24/7 lifetime priority support</li>
+</ul>
+</div>
+<div class="pkg-cta c3">Lihat Detail</div>
+</div>
+
+</div>
+
+<div class="hl camp">
+<strong>💡 Kenapa Titanium?</strong> Sweet spot untuk bisnis outdoor Dede! Sudah include automation lengkap (email + WhatsApp + CRM) yang proven meningkatkan conversion 2-3x lipat. ROI balik dalam sebulan dari fee saving saja!
+</div>
+</div>
+
+<!-- PERBANDINGAN -->
+<div class="s">
+<h2>📋 Perbandingan Paket</h2>
+<table class="tbl">
+<tr><th>Fitur</th><th>Foundry</th><th>Titanium ⭐</th><th>Ind. Prime</th></tr>
+<tr><td><strong>Harga</strong></td><td><strong>Rp 7.5 Jt</strong></td><td><strong>Rp 9.8 Jt</strong></td><td><strong>Rp 13.9 Jt</strong></td></tr>
+
+<tr><td colspan="4" style="background:#2d4a2d;color:#a8d5a8;font-weight:700;font-size:12px;letter-spacing:1px">🌐 WEBSITE & DESIGN</td></tr>
+<tr><td>Homepage custom</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck">✓</td></tr>
+<tr><td>Mobile responsive</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck">✓</td></tr>
+<tr><td>SSL certificate</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck">✓</td></tr>
+<tr><td>Product catalog</td><td>Max 100</td><td>Unlimited</td><td>Unlimited</td></tr>
+<tr><td>Product categories & filter</td><td>Basic</td><td class="ck">✓ Advanced</td><td class="ck">✓ Advanced</td></tr>
+<tr><td>Product image gallery</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck">✓</td></tr>
+<tr><td>Product video embed</td><td>-</td><td class="ck">✓</td><td class="ck">✓</td></tr>
+<tr><td>Page builder (Elementor)</td><td>Free</td><td>Pro</td><td>Pro</td></tr>
+<tr><td>Custom landing page</td><td>-</td><td class="ck">✓</td><td class="ck">✓</td></tr>
+<tr><td>Blog / artikel</td><td>Basic</td><td class="ck">✓ + SEO</td><td class="ck">✓ + SEO</td></tr>
+
+<tr><td colspan="4" style="background:#2d4a2d;color:#a8d5a8;font-weight:700;font-size:12px;letter-spacing:1px">🛒 E-COMMERCE</td></tr>
+<tr><td>Cart & checkout</td><td>Standard</td><td>Optimized</td><td>FunnelKit Pro</td></tr>
+<tr><td>Payment gateway (Midtrans)</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck">✓</td></tr>
+<tr><td>Ongkir otomatis (JNE/J&T)</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck">✓ + Shipper</td></tr>
+<tr><td>Voucher & coupon</td><td>Basic</td><td class="ck">✓</td><td class="ck">✓</td></tr>
+<tr><td>Flash sale & countdown</td><td>-</td><td class="ck">✓</td><td class="ck">✓</td></tr>
+<tr><td>Cross-sell & upsell</td><td>-</td><td class="ck">✓</td><td class="ck">✓</td></tr>
+<tr><td>Order bump (add-on checkout)</td><td>-</td><td>-</td><td class="ck">✓</td></tr>
+<tr><td>Post-purchase upsell</td><td>-</td><td>-</td><td class="ck">✓</td></tr>
+<tr><td>Wishlist</td><td>-</td><td class="ck">✓</td><td class="ck">✓</td></tr>
+<tr><td>Product comparison</td><td>-</td><td>-</td><td class="ck">✓</td></tr>
+<tr><td>Stock management</td><td>Basic</td><td class="ck">✓</td><td class="ck">✓ + Multi-gudang</td></tr>
+
+<tr><td colspan="4" style="background:#2d4a2d;color:#a8d5a8;font-weight:700;font-size:12px;letter-spacing:1px">🤖 AUTOMATION & KOMUNIKASI</td></tr>
+<tr><td>WhatsApp integration</td><td>Tombol chat</td><td class="ck">✓ Auto (Wabiz)</td><td class="ck">✓ Unlimited</td></tr>
+<tr><td>WA order confirmation</td><td>-</td><td class="ck">✓ Auto</td><td class="ck">✓ Auto</td></tr>
+<tr><td>WA payment reminder</td><td>-</td><td class="ck">✓ Auto</td><td class="ck">✓ Auto</td></tr>
+<tr><td>WA shipping tracking</td><td>-</td><td class="ck">✓ Auto</td><td class="ck">✓ Auto</td></tr>
+<tr><td>WA broadcast / blast</td><td>-</td><td>Limited</td><td class="ck">✓ Unlimited</td></tr>
+<tr><td>Email automation</td><td>-</td><td class="ck">✓ (Duniakode)</td><td class="ck">✓ Advanced</td></tr>
+<tr><td>Welcome email series</td><td>-</td><td class="ck">✓ (3 emails)</td><td class="ck">✓ (custom)</td></tr>
+<tr><td>Abandoned cart recovery</td><td>-</td><td class="ck">✓</td><td class="ck">✓</td></tr>
+<tr><td>Post-purchase follow-up</td><td>-</td><td class="ck">✓</td><td class="ck">✓</td></tr>
+<tr><td>Newsletter scheduled</td><td>-</td><td class="ck">✓</td><td class="ck">✓</td></tr>
+<tr><td>AI Chatbot CS</td><td>-</td><td class="ck">✓ (Kata.ai)</td><td class="ck">✓ Advanced</td></tr>
+<tr><td>Live chat widget</td><td>-</td><td class="ck">✓</td><td class="ck">✓ 24/7</td></tr>
+
+<tr><td colspan="4" style="background:#2d4a2d;color:#a8d5a8;font-weight:700;font-size:12px;letter-spacing:1px">👥 CUSTOMER & LOYALTY</td></tr>
+<tr><td>Customer database / CRM</td><td>-</td><td>Basic (Mekari)</td><td>Pro (Mekari)</td></tr>
+<tr><td>Customer segmentation</td><td>-</td><td>Basic</td><td class="ck">✓ Advanced</td></tr>
+<tr><td>Customer purchase history</td><td>WooCommerce</td><td class="ck">✓ CRM</td><td class="ck">✓ CRM</td></tr>
+<tr><td>Membership system</td><td>-</td><td class="ck">✓</td><td class="ck">✓</td></tr>
+<tr><td>Loyalty point</td><td>-</td><td class="ck">✓</td><td class="ck">✓</td></tr>
+<tr><td>VIP tier (Bronze/Silver/Gold)</td><td>-</td><td>-</td><td class="ck">✓</td></tr>
+<tr><td>Referral / affiliate</td><td>-</td><td>-</td><td class="ck">✓</td></tr>
+<tr><td>Customer review & rating</td><td>Basic</td><td class="ck">✓</td><td class="ck">✓ + UGC</td></tr>
+
+<tr><td colspan="4" style="background:#2d4a2d;color:#a8d5a8;font-weight:700;font-size:12px;letter-spacing:1px">📊 ANALYTICS & MARKETING</td></tr>
+<tr><td>Google Analytics 4</td><td class="ck">✓</td><td class="ck">✓ Advanced</td><td class="ck">✓ Advanced</td></tr>
+<tr><td>Meta Pixel (FB/IG retargeting)</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck">✓</td></tr>
+<tr><td>TikTok Pixel</td><td>-</td><td class="ck">✓</td><td class="ck">✓</td></tr>
+<tr><td>Conversion funnel tracking</td><td>-</td><td class="ck">✓</td><td class="ck">✓</td></tr>
+<tr><td>Heatmap & session recording</td><td>-</td><td>-</td><td class="ck">✓ (Hotjar)</td></tr>
+<tr><td>A/B testing</td><td>-</td><td>-</td><td class="ck">✓</td></tr>
+<tr><td>Lead magnet (PDF opt-in)</td><td>-</td><td class="ck">✓</td><td class="ck">✓</td></tr>
+<tr><td>Exit-intent popup</td><td>-</td><td class="ck">✓</td><td class="ck">✓</td></tr>
+<tr><td>SEO optimization</td><td>Basic</td><td>On-page</td><td>On-page + Technical</td></tr>
+<tr><td>Google Ads setup</td><td>-</td><td>-</td><td class="ck">✓</td></tr>
+<tr><td>Social media calendar</td><td>-</td><td>-</td><td class="ck">✓ (3 bulan)</td></tr>
+
+<tr><td colspan="4" style="background:#2d4a2d;color:#a8d5a8;font-weight:700;font-size:12px;letter-spacing:1px">⚙️ INFRASTRUCTURE & KEAMANAN</td></tr>
+<tr><td>Hosting</td><td>Shared</td><td>Optimized</td><td>VPS Cloud</td></tr>
+<tr><td>CDN (Cloudflare)</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck">✓ Pro</td></tr>
+<tr><td>Speed optimization</td><td>Basic</td><td class="ck">✓ (WP Rocket)</td><td class="ck">✓ Advanced</td></tr>
+<tr><td>Security & firewall</td><td>Basic</td><td class="ck">✓ (Wordfence)</td><td class="ck">✓ Hardened</td></tr>
+<tr><td>Daily backup</td><td>Manual</td><td class="ck">✓ Auto</td><td class="ck">✓ Auto + DR</td></tr>
+<tr><td>Uptime guarantee</td><td>99%</td><td>99.5%</td><td>99.9%</td></tr>
+<tr><td>Auto-scaling (traffic spike)</td><td>-</td><td>-</td><td class="ck">✓</td></tr>
+
+<tr><td colspan="4" style="background:#2d4a2d;color:#a8d5a8;font-weight:700;font-size:12px;letter-spacing:1px">🛠️ SUPPORT & LAYANAN</td></tr>
+<tr><td>Training admin</td><td>1x session</td><td>2x session</td><td>3x + video</td></tr>
+<tr><td>Documentation</td><td>Basic</td><td class="ck">✓ Lengkap</td><td class="ck">✓ + Video</td></tr>
+<tr><td>Technical support</td><td>14 hari</td><td>30 hari</td><td>24/7 Lifetime</td></tr>
+<tr><td>Dedicated account manager</td><td>-</td><td>-</td><td class="ck">✓</td></tr>
+<tr><td>Weekly check-in</td><td>-</td><td class="ck">✓</td><td class="ck">✓</td></tr>
+<tr><td>Monthly report</td><td>-</td><td>-</td><td class="ck">✓</td></tr>
+<tr><td>Custom development hours</td><td>-</td><td>-</td><td>50 jam/bulan</td></tr>
+<tr><td>Free maintenance</td><td>1 bulan</td><td>3 bulan</td><td>6 bulan</td></tr>
+<tr><td>Influencer campaign setup</td><td>-</td><td>-</td><td class="ck">✓</td></tr>
+<tr><td>Revisi design</td><td>2x</td><td>5x</td><td>Unlimited</td></tr>
+</table>
+</div>
+
+<!-- TOOLS LOKAL -->
+<div class="s">
+<h2>🇮🇩 Tools Lokal yang Digunakan</h2>
+<p style="font-size:13px;color:#666;margin-bottom:12px">Semua support Bahasa Indonesia, response cepat, data aman di server lokal</p>
+<div class="tools">
+<div class="tool"><div class="ico">💳</div><div class="nm">Midtrans</div><div class="fn">Payment Gateway</div></div>
+<div class="tool"><div class="ico">💬</div><div class="nm">Wabiz</div><div class="fn">WhatsApp API</div></div>
+<div class="tool"><div class="ico">📧</div><div class="nm">Duniakode</div><div class="fn">Email Marketing</div></div>
+<div class="tool"><div class="ico">🤖</div><div class="nm">Kata.ai</div><div class="fn">AI Chatbot CS</div></div>
+<div class="tool"><div class="ico">👥</div><div class="nm">Mekari CRM</div><div class="fn">Customer Mgmt</div></div>
+<div class="tool"><div class="ico">🚚</div><div class="nm">JNE / J&T</div><div class="fn">Shipping</div></div>
+<div class="tool"><div class="ico">🌐</div><div class="nm">Niagahoster</div><div class="fn">Hosting</div></div>
+<div class="tool"><div class="ico">⚡</div><div class="nm">Cloudflare</div><div class="fn">CDN & Security</div></div>
+</div>
+</div>
+
+<!-- TIMELINE -->
+<div class="s">
+<h2>⏱️ Timeline (21 Hari)</h2>
+<div class="tl-item">
+<div class="tl-dot">1</div>
+<div class="tl-txt"><h4>Briefing & Design (Hari 1-7)</h4><p>Diskusi brand, design mockup homepage & product page, setup infrastructure (hosting, domain, SSL)</p></div>
+</div>
+<div class="tl-item">
+<div class="tl-dot">2</div>
+<div class="tl-txt"><h4>Development & Integration (Hari 8-14)</h4><p>Build website, integrasi semua tools (payment, WhatsApp, email, CRM, shipping), testing lengkap</p></div>
+</div>
+<div class="tl-item">
+<div class="tl-dot">3</div>
+<div class="tl-txt"><h4>Launch & Training (Hari 15-21)</h4><p>Upload 100+ produk, setup automation sequences, training admin, soft launch → GO LIVE! 🚀</p></div>
+</div>
+</div>
+
+<!-- ESTIMASI HASIL -->
+<div class="s">
+<h2>📈 Estimasi Hasil Bulan Pertama</h2>
+<div class="nums">
+<div class="num-card green">
+<div class="big">800-1000</div>
+<div class="lbl">Visitor/hari (end of month)</div>
+</div>
+<div class="num-card gold">
+<div class="big">Rp 50-75 Jt</div>
+<div class="lbl">Revenue bulan pertama</div>
+</div>
+<div class="num-card" style="background:linear-gradient(135deg,#7c3aed,#6d28d9)">
+<div class="big">1500-2000</div>
+<div class="lbl">Email subscribers terkumpul</div>
+</div>
+</div>
+<div class="hl forest">
+<strong>📊 Bulan ke-3:</strong> Traffic 2000-3000/hari · Revenue Rp 150-250 juta/bulan · Repeat customer 25-35% · Email list 5000+ · <strong>ROI sudah 5-10x lipat dari investment!</strong>
+</div>
+</div>
+
+<!-- HARGA & PEMBAYARAN -->
+<div class="s">
+<h2>💰 Investasi & Pembayaran</h2>
+
+<div class="price-box">
+<h4>⭐ PAKET TITANIUM - Recommended</h4>
+<div class="price-row"><span>Development (one-time)</span><span class="amt">Rp 9,800,000</span></div>
+<div class="price-row"><span>Maintenance bulan 1-3</span><span style="color:#16a34a;font-weight:700">FREE! 🎉</span></div>
+<div class="price-row"><span>Maintenance bulan 4+ (bulanan)</span><span class="amt">Rp 2,500,000</span></div>
+</div>
+
+<div class="hl camp">
+<strong>🔥 Diskon Tunai:</strong> Bayar full di awal → hanya <strong>Rp 8,820,000</strong> (hemat Rp 980rb!)
+</div>
+
+<h4 style="color:#2d4a2d;margin:15px 0 10px;font-size:15px">Skema Cicilan:</h4>
+<div class="price-box" style="border-color:#e8a840">
+<div class="price-row"><span>DP 50% (saat project mulai)</span><span class="amt">Rp 4,900,000</span></div>
+<div class="price-row"><span>30% (development selesai, hari 21)</span><span class="amt">Rp 2,940,000</span></div>
+<div class="price-row"><span>20% (sebelum go live, hari 30)</span><span class="amt">Rp 1,960,000</span></div>
+<div class="price-row"><span><strong>TOTAL</strong></span><span class="amt">Rp 9,800,000</span></div>
+</div>
+</div>
+
+<!-- BONUS -->
+<div class="s">
+<h2>🎁 Bonus Khusus untuk Dede</h2>
+<div class="bonus">
+<div class="bonus-item">🌐 Free domain 1 tahun (Rp 200k)</div>
+<div class="bonus-item">🔒 Free SSL certificate (Rp 500k)</div>
+<div class="bonus-item">📧 Free email automation setup (Rp 500k)</div>
+<div class="bonus-item">🤖 Free AI chatbot setup (Rp 1 jt)</div>
+<div class="bonus-item">🛠️ Free maintenance 3 bulan (Rp 7.5 jt)</div>
+<div class="bonus-item">📊 Free analytics setup (Rp 500k)</div>
+</div>
+<div class="hl camp"><strong>Total bonus value: Rp 10,200,000!</strong> Semua gratis kalau pilih Paket Titanium.</div>
+</div>
+
+<!-- GARANSI -->
+<div class="s">
+<h2>🛡️ Garansi & Komitmen</h2>
+<div class="pain" style="grid-template-columns:1fr">
+<div class="pain-item good">✅ <strong>Satisfaction Guarantee</strong> — Tidak puas? Kami perbaiki sampai puas</div>
+<div class="pain-item good">✅ <strong>Speed Guarantee</strong> — Loading < 3 detik atau gratis optimization</div>
+<div class="pain-item good">✅ <strong>Support Guarantee</strong> — Response < 2 jam via WhatsApp</div>
+<div class="pain-item good">✅ <strong>Security Guarantee</strong> — Data encrypted, backup harian, GDPR compliant</div>
+<div class="pain-item good">✅ <strong>Ownership 100%</strong> — Website, domain, database semuanya milik Dede</div>
+</div>
+</div>
+
+<!-- NEXT STEPS -->
+<div class="s" style="background:linear-gradient(135deg,#f0f7f0,#e0f0e0)">
+<h2>🚀 Next Step</h2>
+<p style="font-size:14px;color:#2d3a2d;margin-bottom:12px">Tinggal 3 langkah untuk mulai:</p>
+<div class="tl-item" style="border-color:#3d6b3d">
+<div class="tl-dot">1</div>
+<div class="tl-txt"><h4>Review & Diskusi</h4><p>Ada pertanyaan? Hubungi saya via WhatsApp untuk chat atau schedule call</p></div>
+</div>
+<div class="tl-item" style="border-color:#3d6b3d">
+<div class="tl-dot">2</div>
+<div class="tl-txt"><h4>Agreement & DP</h4><p>Setuju → tanda tangan agreement → transfer DP 50% → project mulai!</p></div>
+</div>
+<div class="tl-item" style="border:none;margin:0;padding:0">
+<div class="tl-dot" style="background:#e8a840">3</div>
+<div class="tl-txt"><h4>Website Live dalam 21 Hari! 🎉</h4><p>Tim kami kerja, Dede tinggal review progress. 21 hari kemudian: website GO LIVE!</p></div>
+</div>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+<h3>📞 Hubungi Saya Sekarang</h3>
+<p>Siap diskusi lebih lanjut? Jangan ragu reach out kapan saja!</p>
+<div class="contact-row">
+<a href="https://wa.me/6285782030090?text=Halo%20Mas%20Ilham,%20saya%20Dede.%20Tertarik%20dengan%20proposal%20website%20e-commerce.%20Bisa%20diskusi?">💬 WhatsApp</a>
+<a href="tel:+6285782030090">📞 085782030090</a>
+<a href="mailto:ilham_rusli@yahoo.com">📧 Email</a>
+</div>
+<div class="sign">
+<div class="name">Ilham Rusli</div>
+<div class="role">Digital Solution Provider · WordPress & E-Commerce Specialist</div>
+<div style="font-size:11px;color:#666;margin-top:8px">Proposal valid hingga 13 Juni 2026 · Confidential</div>
+</div>
+</div>
+
+</div>
+</body>
+</html>
