@@ -2,37 +2,42 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5" />
     <title>Proposal Penawaran - LPK PT. PUTRA BALARAJA BERKAH</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&display=swap" rel="stylesheet" />
     <style>
-        /* RESET & BASE */
+        /* ===== RESET & BASE ===== */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             font-family: 'Inter', sans-serif;
             background: #f0f2f7;
-            padding: 40px 20px;
+            padding: 20px 12px;
             color: #1a2634;
             display: flex;
             justify-content: center;
+            min-height: 100vh;
         }
 
         .proposal-container {
             max-width: 1200px;
             width: 100%;
             background: #ffffff;
-            border-radius: 32px;
-            box-shadow: 0 25px 60px -12px rgba(0, 0, 0, 0.15);
-            padding: 50px 45px;
+            border-radius: 24px;
+            box-shadow: 0 20px 60px -12px rgba(0, 0, 0, 0.12);
+            padding: 30px 20px;
             transition: all 0.3s ease;
         }
 
-        /* TYPOGRAPHY */
+        /* ===== TYPOGRAPHY ===== */
         h1,
         h2,
         h3,
@@ -42,17 +47,18 @@
         }
 
         h1 {
-            font-size: 2.6rem;
+            font-size: 2.2rem;
             color: #0b1a2a;
         }
 
         h2 {
-            font-size: 2rem;
+            font-size: 1.6rem;
             color: #0b1a2a;
-            margin-bottom: 18px;
+            margin-bottom: 16px;
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 10px;
+            flex-wrap: wrap;
         }
 
         h2::after {
@@ -60,24 +66,26 @@
             flex: 1;
             height: 2px;
             background: linear-gradient(90deg, #2563eb, transparent);
+            min-width: 40px;
         }
 
         h3 {
-            font-size: 1.25rem;
+            font-size: 1.1rem;
             color: #1e2a3a;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
         }
 
         h4 {
-            font-size: 1rem;
+            font-size: 0.95rem;
             color: #1e2a3a;
-            margin-bottom: 6px;
+            margin-bottom: 4px;
         }
 
         p {
-            line-height: 1.7;
+            line-height: 1.6;
             color: #3d4a5c;
             font-weight: 400;
+            font-size: 0.95rem;
         }
 
         .highlight-blue {
@@ -85,32 +93,34 @@
             font-weight: 600;
         }
 
-        /* HEADER */
+        /* ===== HEADER ===== */
         .header {
             display: flex;
             justify-content: space-between;
             align-items: center;
             flex-wrap: wrap;
+            gap: 12px;
             border-bottom: 2px solid #eef2f6;
-            padding-bottom: 28px;
-            margin-bottom: 40px;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
         }
 
         .brand {
             display: flex;
             align-items: center;
-            gap: 18px;
+            gap: 14px;
+            flex-wrap: wrap;
         }
 
         .brand .logo-img {
-            height: 60px;
+            height: 48px;
             width: auto;
-            max-width: 200px;
+            max-width: 140px;
             object-fit: contain;
         }
 
         .brand .logo-text {
-            font-size: 1.8rem;
+            font-size: 1.3rem;
             font-weight: 800;
             color: #0b1a2a;
             letter-spacing: -0.5px;
@@ -122,60 +132,62 @@
 
         .brand .tagline {
             color: #5b6b7e;
-            font-size: 0.9rem;
+            font-size: 0.75rem;
             font-weight: 400;
-            margin-top: 2px;
+            display: block;
         }
 
         .badge-proposal {
             background: #2563eb;
             color: #fff;
-            padding: 8px 24px;
+            padding: 6px 18px;
             border-radius: 40px;
             font-weight: 600;
-            font-size: 0.9rem;
+            font-size: 0.75rem;
             letter-spacing: 0.3px;
+            white-space: nowrap;
         }
 
-        /* KLIEN INFO */
+        /* ===== KLIEN INFO ===== */
         .client-info {
             background: linear-gradient(135deg, #f0f7ff, #e8f0fe);
-            border-radius: 16px;
-            padding: 18px 28px;
-            margin-bottom: 40px;
+            border-radius: 14px;
+            padding: 14px 20px;
+            margin-bottom: 30px;
             display: flex;
             flex-wrap: wrap;
             align-items: center;
             justify-content: space-between;
+            gap: 10px;
             border: 1px solid #d6e4f5;
         }
 
         .client-info .label {
             font-weight: 600;
             color: #1e3a6b;
-            font-size: 0.9rem;
+            font-size: 0.75rem;
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
 
         .client-info .name {
             font-weight: 800;
-            font-size: 1.3rem;
+            font-size: 1.1rem;
             color: #0b1a2a;
         }
 
         .client-info .badge-client {
             background: #2563eb;
             color: #fff;
-            padding: 4px 18px;
+            padding: 3px 14px;
             border-radius: 40px;
-            font-size: 0.8rem;
+            font-size: 0.7rem;
             font-weight: 600;
         }
 
-        /* SECTION */
+        /* ===== SECTION ===== */
         .section {
-            margin-bottom: 50px;
+            margin-bottom: 40px;
         }
 
         .section-number {
@@ -185,80 +197,180 @@
             background: #2563eb;
             color: #fff;
             font-weight: 800;
-            font-size: 0.8rem;
-            width: 28px;
-            height: 28px;
+            font-size: 0.7rem;
+            width: 26px;
+            height: 26px;
             border-radius: 50%;
-            margin-right: 10px;
+            margin-right: 8px;
             flex-shrink: 0;
         }
 
-        /* GRID PROBLEM-SOLUTION */
-        .problem-solution-grid {
+        /* ===== GRID ===== */
+        .grid-2 {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 30px;
-            margin-top: 20px;
+            gap: 20px;
+            margin-top: 14px;
         }
 
-        @media (max-width: 768px) {
-            .problem-solution-grid {
-                grid-template-columns: 1fr;
-            }
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 18px;
+            margin-top: 14px;
         }
 
-        .card-ps {
+        .grid-4 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 16px;
+            margin-top: 14px;
+        }
+
+        /* ===== CARDS ===== */
+        .card {
             background: #f8faff;
-            border-radius: 20px;
-            padding: 28px 30px;
-            border-left: 5px solid #2563eb;
-            transition: transform 0.2s;
+            border-radius: 16px;
+            padding: 20px 22px;
+            transition: all 0.3s;
+            border: 1px solid #eef2f6;
         }
 
-        .card-ps:hover {
-            transform: translateY(-4px);
+        .card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
         }
 
-        .card-ps.solution {
-            border-left-color: #10b981;
+        .card-problem {
+            border-left: 4px solid #ef4444;
+            background: #fef2f2;
         }
 
-        .card-ps h3 {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            margin-bottom: 12px;
+        .card-problem .icon {
+            font-size: 1.5rem;
+            margin-bottom: 4px;
         }
 
-        .card-ps ul {
+        .card-problem h4 {
+            color: #dc2626;
+            font-size: 0.95rem;
+        }
+
+        .card-problem ul {
             list-style: none;
             padding: 0;
+            margin-top: 6px;
         }
 
-        .card-ps ul li {
-            padding: 6px 0 6px 28px;
-            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="%232563eb" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>') left center no-repeat;
-            background-size: 18px;
-            color: #2c3a4b;
+        .card-problem ul li {
+            padding: 4px 0 4px 22px;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="%23ef4444" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>') left center no-repeat;
+            background-size: 14px;
+            color: #3d4a5c;
+            font-size: 0.85rem;
         }
 
-        .card-ps.solution ul li {
-            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="%2310b981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>');
+        .card-problem .dampak {
+            margin-top: 8px;
+            padding-top: 8px;
+            border-top: 1px solid #fca5a5;
+            font-size: 0.85rem;
         }
 
-        /* UNGGULAN */
+        .card-problem .dampak strong {
+            color: #dc2626;
+        }
+
+        .card-solution {
+            border-left: 4px solid #10b981;
+            background: #f0fdf4;
+        }
+
+        .card-solution .icon {
+            font-size: 1.5rem;
+            margin-bottom: 4px;
+        }
+
+        .card-solution h4 {
+            color: #059669;
+            font-size: 0.95rem;
+        }
+
+        .card-solution ul {
+            list-style: none;
+            padding: 0;
+            margin-top: 6px;
+        }
+
+        .card-solution ul li {
+            padding: 4px 0 4px 22px;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="%2310b981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>') left center no-repeat;
+            background-size: 14px;
+            color: #3d4a5c;
+            font-size: 0.85rem;
+        }
+
+        .card-dampak {
+            border-left: 4px solid #ef4444;
+            background: #fef2f2;
+        }
+
+        .card-dampak h4 {
+            color: #dc2626;
+            font-size: 0.95rem;
+        }
+
+        .card-dampak ul {
+            list-style: none;
+            padding: 0;
+            margin-top: 6px;
+        }
+
+        .card-dampak ul li {
+            padding: 4px 0 4px 22px;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="%23ef4444" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>') left center no-repeat;
+            background-size: 14px;
+            color: #3d4a5c;
+            font-size: 0.85rem;
+        }
+
+        .card-manfaat {
+            border-left: 4px solid #f59e0b;
+            background: #fffbeb;
+        }
+
+        .card-manfaat h4 {
+            color: #d97706;
+            font-size: 0.95rem;
+        }
+
+        .card-manfaat ul {
+            list-style: none;
+            padding: 0;
+            margin-top: 6px;
+        }
+
+        .card-manfaat ul li {
+            padding: 4px 0 4px 22px;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="%23f59e0b" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>') left center no-repeat;
+            background-size: 14px;
+            color: #3d4a5c;
+            font-size: 0.85rem;
+        }
+
+        /* ===== UNGGULAN ===== */
         .unggulan-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 16px;
             margin-top: 12px;
         }
 
         .unggulan-item {
             background: #ffffff;
             border: 1px solid #e9edf4;
-            border-radius: 16px;
-            padding: 22px 20px;
+            border-radius: 14px;
+            padding: 18px 16px;
             text-align: center;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.02);
             transition: all 0.25s;
@@ -270,37 +382,37 @@
         }
 
         .unggulan-item .icon-svg {
-            width: 40px;
-            height: 40px;
-            margin: 0 auto 8px;
+            width: 36px;
+            height: 36px;
+            margin: 0 auto 6px;
             color: #2563eb;
             display: block;
         }
 
         .unggulan-item h4 {
             font-weight: 700;
-            font-size: 1rem;
-            margin-bottom: 4px;
+            font-size: 0.9rem;
+            margin-bottom: 3px;
         }
 
         .unggulan-item p {
-            font-size: 0.9rem;
+            font-size: 0.8rem;
             color: #5f6f82;
         }
 
-        /* PAKET HARGA */
+        /* ===== PAKET HARGA ===== */
         .pricing-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 28px;
-            margin-top: 20px;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-top: 16px;
         }
 
         .pricing-card {
             background: #ffffff;
             border: 1px solid #e4e9f0;
-            border-radius: 24px;
-            padding: 32px 28px 28px;
+            border-radius: 20px;
+            padding: 24px 20px 20px;
             transition: all 0.3s ease;
             position: relative;
             display: flex;
@@ -309,8 +421,8 @@
 
         .pricing-card:hover {
             border-color: #2563eb;
-            transform: translateY(-8px);
-            box-shadow: 0 20px 40px -12px rgba(37, 99, 235, 0.18);
+            transform: translateY(-5px);
+            box-shadow: 0 16px 32px -12px rgba(37, 99, 235, 0.18);
         }
 
         .pricing-card.popular {
@@ -321,38 +433,49 @@
         .pricing-card.popular::before {
             content: '⭐ Paling Direkomendasikan';
             position: absolute;
-            top: -12px;
+            top: -10px;
             left: 50%;
             transform: translateX(-50%);
             background: #2563eb;
             color: #fff;
-            font-size: 0.75rem;
+            font-size: 0.65rem;
             font-weight: 700;
-            padding: 4px 20px;
+            padding: 3px 16px;
             border-radius: 40px;
             letter-spacing: 0.3px;
             white-space: nowrap;
         }
 
         .pricing-card .price {
-            font-size: 2.4rem;
+            font-size: 2rem;
             font-weight: 800;
             color: #0b1a2a;
-            margin: 12px 0 6px;
+            margin: 8px 0 4px;
         }
 
         .pricing-card .price small {
-            font-size: 1rem;
+            font-size: 0.85rem;
             font-weight: 400;
             color: #6b7b8e;
         }
 
         .pricing-card .desc-price {
             color: #5f6f82;
-            font-size: 0.9rem;
-            margin-bottom: 18px;
+            font-size: 0.8rem;
+            margin-bottom: 14px;
             border-bottom: 1px solid #edf2f9;
-            padding-bottom: 16px;
+            padding-bottom: 12px;
+        }
+
+        .pricing-card .badge-include {
+            display: inline-block;
+            background: #e6f7ed;
+            color: #059669;
+            font-size: 0.65rem;
+            font-weight: 700;
+            padding: 2px 10px;
+            border-radius: 16px;
+            margin-top: 3px;
         }
 
         .pricing-card ul {
@@ -362,28 +485,28 @@
         }
 
         .pricing-card ul li {
-            padding: 6px 0 6px 28px;
-            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="%232563eb" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>') left center no-repeat;
-            background-size: 16px;
+            padding: 4px 0 4px 24px;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="%232563eb" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>') left center no-repeat;
+            background-size: 14px;
             color: #2c3a4b;
-            font-size: 0.95rem;
+            font-size: 0.82rem;
         }
 
         .pricing-card .hosting-spec {
             background: #f8faff;
-            border-radius: 14px;
-            padding: 16px 18px;
-            margin-top: 14px;
+            border-radius: 12px;
+            padding: 14px 16px;
+            margin-top: 12px;
             border: 1px solid #e9edf4;
         }
 
         .pricing-card .hosting-spec .title {
             font-weight: 700;
-            font-size: 0.8rem;
+            font-size: 0.7rem;
             text-transform: uppercase;
             color: #2563eb;
             letter-spacing: 0.5px;
-            margin-bottom: 8px;
+            margin-bottom: 6px;
             display: flex;
             align-items: center;
             gap: 6px;
@@ -392,47 +515,75 @@
         .pricing-card .hosting-spec .spec-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 4px 16px;
+            gap: 2px 12px;
         }
 
         .pricing-card .hosting-spec .spec-grid span {
-            font-size: 0.8rem;
+            font-size: 0.72rem;
             color: #3d4a5c;
             display: flex;
             align-items: center;
-            gap: 6px;
+            gap: 5px;
         }
 
         .pricing-card .hosting-spec .spec-grid span::before {
             content: '✓';
             color: #2563eb;
             font-weight: 800;
-            font-size: 0.8rem;
+            font-size: 0.7rem;
         }
 
         .pricing-card .hosting-spec .desc-spec {
-            font-size: 0.8rem;
+            font-size: 0.72rem;
             color: #5f6f82;
-            margin-top: 8px;
-            padding-top: 8px;
+            margin-top: 6px;
+            padding-top: 6px;
             border-top: 1px dashed #e9edf4;
         }
 
-        /* BUTTON WHATSAPP */
+        .pricing-card .hosting-spec .email-benefit {
+            font-size: 0.72rem;
+            color: #2563eb;
+            margin-top: 6px;
+            padding: 6px 10px;
+            background: #eef4ff;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            flex-wrap: wrap;
+        }
+
+        .pricing-card .hosting-spec .email-benefit .email-icon {
+            font-size: 0.9rem;
+        }
+
+        .pricing-card .hosting-spec .email-benefit .email-text {
+            font-weight: 500;
+            font-size: 0.72rem;
+        }
+
+        .pricing-card .hosting-spec .email-benefit .email-text small {
+            font-weight: 400;
+            color: #4a5b7a;
+        }
+
+        /* ===== BUTTON WHATSAPP ===== */
         .btn-wa {
             display: block;
             text-align: center;
             background: #25D366;
             color: #fff;
             font-weight: 700;
-            padding: 14px 10px;
-            border-radius: 60px;
+            padding: 12px 10px;
+            border-radius: 50px;
             text-decoration: none;
-            margin-top: 24px;
+            margin-top: 18px;
             transition: all 0.3s;
-            font-size: 1rem;
+            font-size: 0.9rem;
             border: none;
             cursor: pointer;
+            width: 100%;
         }
 
         .btn-wa:hover {
@@ -454,109 +605,40 @@
 
         .btn-wa .wa-icon {
             display: inline-block;
-            margin-right: 8px;
+            margin-right: 6px;
         }
 
-        /* SISTEM LANJUTAN */
-        .sistem-lanjutan {
-            background: linear-gradient(145deg, #f0f5ff, #ffffff);
-            border-radius: 24px;
-            padding: 36px 38px;
-            border: 1px solid #dce5f2;
-            margin-top: 16px;
-        }
-
-        .sistem-lanjutan .row {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 30px;
-            align-items: center;
-        }
-
-        .sistem-lanjutan .col {
-            flex: 1;
-            min-width: 240px;
-        }
-
-        .sistem-lanjutan .price-big {
-            font-size: 2.8rem;
-            font-weight: 800;
-            color: #0b1a2a;
-        }
-
-        .sistem-lanjutan .price-big small {
-            font-size: 1.2rem;
-            font-weight: 400;
-            color: #50607a;
-        }
-
-        .badge-cta {
-            display: inline-block;
-            background: #10b981;
-            color: #fff;
-            padding: 12px 32px;
-            border-radius: 60px;
-            font-weight: 700;
-            text-decoration: none;
-            transition: background 0.2s;
-        }
-
-        .badge-cta:hover {
-            background: #059669;
-        }
-
-        .list-feature-sistem {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-            gap: 10px 20px;
-            margin: 16px 0 10px;
-        }
-
-        .list-feature-sistem span {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            font-size: 0.95rem;
-            color: #1f2b3b;
-        }
-
-        .list-feature-sistem span::before {
-            content: '✓';
-            color: #2563eb;
-            font-weight: 800;
-            font-size: 1.2rem;
-        }
-
-        /* TIMELINE */
+        /* ===== TIMELINE ===== */
         .timeline-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-            margin-top: 16px;
+            grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+            gap: 16px;
+            margin-top: 14px;
         }
 
         .timeline-item {
             background: #f8faff;
-            border-radius: 16px;
-            padding: 20px 22px;
+            border-radius: 14px;
+            padding: 16px 18px;
             text-align: center;
             border: 1px solid #e9edf4;
         }
 
         .timeline-item .step {
-            font-size: 2rem;
+            font-size: 1.6rem;
             font-weight: 800;
             color: #2563eb;
-            opacity: 0.3;
+            opacity: 0.25;
             line-height: 1;
         }
 
         .timeline-item h4 {
-            margin: 6px 0 4px;
+            font-size: 0.85rem;
+            margin: 4px 0 3px;
         }
 
         .timeline-item p {
-            font-size: 0.85rem;
+            font-size: 0.75rem;
             color: #5f6f82;
             margin: 0;
         }
@@ -565,26 +647,26 @@
             display: inline-block;
             background: #2563eb;
             color: #fff;
-            font-size: 0.7rem;
+            font-size: 0.6rem;
             font-weight: 700;
-            padding: 2px 14px;
-            border-radius: 20px;
-            margin-top: 8px;
+            padding: 2px 12px;
+            border-radius: 16px;
+            margin-top: 6px;
         }
 
-        /* PAYMENT SCHEDULE - 3 FASE */
+        /* ===== PAYMENT ===== */
         .payment-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 16px;
             margin-top: 12px;
         }
 
         .payment-item {
             background: #ffffff;
             border: 1px solid #e9edf4;
-            border-radius: 16px;
-            padding: 24px 22px;
+            border-radius: 14px;
+            padding: 20px 18px;
             text-align: center;
             transition: all 0.25s;
             position: relative;
@@ -597,16 +679,16 @@
 
         .payment-item .nomor {
             font-weight: 800;
-            font-size: 1.6rem;
+            font-size: 1.3rem;
             color: #2563eb;
             opacity: 0.15;
             position: absolute;
-            top: 12px;
-            right: 18px;
+            top: 8px;
+            right: 14px;
         }
 
         .payment-item .persen {
-            font-size: 2.2rem;
+            font-size: 1.8rem;
             font-weight: 800;
             color: #0b1a2a;
         }
@@ -617,13 +699,13 @@
 
         .payment-item .label {
             font-weight: 600;
-            font-size: 1rem;
+            font-size: 0.9rem;
             color: #0b1a2a;
-            margin: 6px 0 4px;
+            margin: 4px 0 3px;
         }
 
         .payment-item .value {
-            font-size: 0.85rem;
+            font-size: 0.78rem;
             color: #5f6f82;
         }
 
@@ -631,11 +713,11 @@
             display: inline-block;
             background: #eef4ff;
             color: #2563eb;
-            font-size: 0.7rem;
+            font-size: 0.6rem;
             font-weight: 700;
-            padding: 3px 16px;
-            border-radius: 20px;
-            margin-top: 10px;
+            padding: 2px 14px;
+            border-radius: 16px;
+            margin-top: 8px;
         }
 
         .payment-item .badge-pay.green {
@@ -648,18 +730,76 @@
             color: #d97706;
         }
 
-        /* TERMS */
-        .terms-grid {
+        /* ===== RENEWAL ===== */
+        .renewal-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 20px 40px;
+            gap: 20px;
             margin-top: 12px;
         }
 
-        @media (max-width: 640px) {
-            .terms-grid {
-                grid-template-columns: 1fr;
-            }
+        .renewal-card {
+            background: #ffffff;
+            border: 1px solid #e9edf4;
+            border-radius: 14px;
+            padding: 18px 20px;
+            transition: all 0.25s;
+        }
+
+        .renewal-card:hover {
+            border-color: #2563eb;
+            box-shadow: 0 8px 20px rgba(37, 99, 235, 0.06);
+        }
+
+        .renewal-card .title {
+            font-weight: 700;
+            font-size: 0.95rem;
+            color: #0b1a2a;
+            margin-bottom: 6px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .renewal-card table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.82rem;
+        }
+
+        .renewal-card table td {
+            padding: 6px 4px;
+            border-bottom: 1px solid #f0f2f6;
+        }
+
+        .renewal-card table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .renewal-card table .label {
+            color: #5f6f82;
+        }
+
+        .renewal-card table .value {
+            font-weight: 600;
+            color: #0b1a2a;
+            text-align: right;
+        }
+
+        .renewal-card .note {
+            font-size: 0.72rem;
+            color: #5f6f82;
+            margin-top: 8px;
+            padding-top: 8px;
+            border-top: 1px solid #f0f2f6;
+        }
+
+        /* ===== TERMS ===== */
+        .terms-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px 30px;
+            margin-top: 12px;
         }
 
         .terms-grid ul {
@@ -668,29 +808,29 @@
         }
 
         .terms-grid ul li {
-            padding: 5px 0 5px 28px;
-            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="%232563eb" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>') left center no-repeat;
-            background-size: 16px;
+            padding: 4px 0 4px 22px;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="%232563eb" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>') left center no-repeat;
+            background-size: 14px;
             color: #3d4a5c;
-            font-size: 0.9rem;
+            font-size: 0.82rem;
         }
 
-        /* FOOTER / KONTAK */
+        /* ===== FOOTER ===== */
         .footer-contact {
-            margin-top: 40px;
-            padding-top: 30px;
+            margin-top: 30px;
+            padding-top: 24px;
             border-top: 2px solid #eef2f6;
             display: flex;
             flex-wrap: wrap;
             justify-content: space-between;
-            gap: 20px;
+            gap: 14px;
         }
 
         .contact-item {
             display: flex;
             align-items: center;
-            gap: 12px;
-            font-size: 0.95rem;
+            gap: 10px;
+            font-size: 0.85rem;
             color: #1e2a3a;
         }
 
@@ -713,61 +853,377 @@
             color: #25D366;
         }
 
-        /* RESPONSIVE */
-        @media (max-width: 640px) {
+        /* ===== UTILITY ===== */
+        .text-muted {
+            color: #6a7a8d;
+            font-size: 0.9rem;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .mt-8 {
+            margin-top: 8px;
+        }
+
+        .mb-8 {
+            margin-bottom: 8px;
+        }
+
+        .text-small {
+            font-size: 0.82rem;
+            color: #5f6f82;
+        }
+
+        .bg-warning {
+            background: #fef9e7;
+            border-radius: 10px;
+            padding: 10px 16px;
+            font-size: 0.82rem;
+            color: #7c6a2e;
+            border: 1px solid #f5e6b8;
+            margin-top: 12px;
+        }
+
+        .bg-info {
+            background: #f0f7ff;
+            border-radius: 10px;
+            padding: 10px 16px;
+            font-size: 0.82rem;
+            color: #1e3a6b;
+            border: 1px solid #d6e4f5;
+            margin-top: 12px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* ============================================================ */
+        /* ===== RESPONSIVE BREAKPOINTS ===== */
+        /* ============================================================ */
+
+        @media (max-width: 992px) {
             .proposal-container {
-                padding: 28px 18px;
+                padding: 24px 18px;
             }
             h1 {
-                font-size: 2rem;
+                font-size: 1.8rem;
+            }
+            h2 {
+                font-size: 1.3rem;
+            }
+            .pricing-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            .renewal-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 12px 8px;
+            }
+            .proposal-container {
+                padding: 20px 14px;
+                border-radius: 18px;
             }
             .header {
                 flex-direction: column;
                 align-items: flex-start;
-                gap: 12px;
+                gap: 8px;
+                padding-bottom: 14px;
+                margin-bottom: 20px;
+            }
+            .brand .logo-img {
+                height: 38px;
+                max-width: 100px;
+            }
+            .brand .logo-text {
+                font-size: 1.1rem;
             }
             .badge-proposal {
                 align-self: flex-start;
-            }
-            .brand .logo-img {
-                height: 40px;
-            }
-            .pricing-card.popular::before {
                 font-size: 0.65rem;
-                padding: 2px 14px;
-                top: -10px;
-            }
-            .sistem-lanjutan {
-                padding: 24px 18px;
+                padding: 4px 14px;
             }
             .client-info {
+                padding: 12px 16px;
                 flex-direction: column;
                 align-items: flex-start;
-                gap: 8px;
+                gap: 6px;
+            }
+            .client-info .name {
+                font-size: 0.95rem;
+            }
+            h1 {
+                font-size: 1.5rem;
+            }
+            h2 {
+                font-size: 1.1rem;
+                margin-bottom: 12px;
+            }
+            h2::after {
+                min-width: 20px;
+            }
+            h3 {
+                font-size: 0.95rem;
+            }
+            p {
+                font-size: 0.85rem;
+            }
+            .section {
+                margin-bottom: 28px;
+            }
+            .grid-2 {
+                grid-template-columns: 1fr;
+                gap: 14px;
+            }
+            .grid-3 {
+                grid-template-columns: 1fr 1fr;
+                gap: 12px;
+            }
+            .grid-4 {
+                grid-template-columns: 1fr 1fr;
+                gap: 12px;
+            }
+            .card {
+                padding: 16px 18px;
+            }
+            .card-problem ul li,
+            .card-solution ul li,
+            .card-dampak ul li,
+            .card-manfaat ul li {
+                font-size: 0.8rem;
+                padding: 3px 0 3px 20px;
+            }
+            .pricing-grid {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+            .pricing-card {
+                padding: 20px 16px 16px;
+            }
+            .pricing-card .price {
+                font-size: 1.7rem;
+            }
+            .pricing-card ul li {
+                font-size: 0.78rem;
+                padding: 3px 0 3px 20px;
+            }
+            .pricing-card .hosting-spec .spec-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            .pricing-card .hosting-spec .spec-grid span {
+                font-size: 0.68rem;
+            }
+            .pricing-card .hosting-spec .email-benefit .email-text {
+                font-size: 0.68rem;
+            }
+            .pricing-card.popular::before {
+                font-size: 0.55rem;
+                padding: 2px 12px;
+                top: -8px;
+            }
+            .unggulan-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 12px;
+            }
+            .unggulan-item {
+                padding: 14px 12px;
+            }
+            .unggulan-item .icon-svg {
+                width: 30px;
+                height: 30px;
+            }
+            .unggulan-item h4 {
+                font-size: 0.8rem;
+            }
+            .unggulan-item p {
+                font-size: 0.72rem;
+            }
+            .timeline-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 12px;
+            }
+            .timeline-item {
+                padding: 12px 14px;
+            }
+            .timeline-item .step {
+                font-size: 1.3rem;
+            }
+            .timeline-item h4 {
+                font-size: 0.78rem;
+            }
+            .timeline-item p {
+                font-size: 0.7rem;
+            }
+            .payment-grid {
+                grid-template-columns: 1fr;
+                gap: 12px;
             }
             .payment-item {
-                padding: 18px 16px;
+                padding: 16px 14px;
             }
             .payment-item .persen {
-                font-size: 1.8rem;
+                font-size: 1.5rem;
+            }
+            .renewal-grid {
+                grid-template-columns: 1fr;
+                gap: 14px;
+            }
+            .renewal-card {
+                padding: 14px 16px;
+            }
+            .renewal-card .title {
+                font-size: 0.85rem;
+            }
+            .renewal-card table {
+                font-size: 0.75rem;
+            }
+            .renewal-card table td {
+                padding: 4px 3px;
+            }
+            .terms-grid {
+                grid-template-columns: 1fr;
+                gap: 12px;
+            }
+            .terms-grid ul li {
+                font-size: 0.78rem;
+            }
+            .footer-contact {
+                flex-direction: column;
+                gap: 10px;
+            }
+            .contact-item {
+                font-size: 0.78rem;
+            }
+            .bg-info {
+                flex-direction: column;
+                gap: 8px;
+                text-align: center;
+            }
+            .section-number {
+                width: 22px;
+                height: 22px;
+                font-size: 0.6rem;
+            }
+            .btn-wa {
+                font-size: 0.82rem;
+                padding: 10px 8px;
+            }
+            .btn-wa .wa-icon {
+                margin-right: 4px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding: 8px 4px;
+            }
+            .proposal-container {
+                padding: 16px 10px;
+                border-radius: 14px;
+            }
+            h1 {
+                font-size: 1.2rem;
+            }
+            h2 {
+                font-size: 0.95rem;
+            }
+            .brand .logo-img {
+                height: 32px;
+                max-width: 80px;
+            }
+            .brand .logo-text {
+                font-size: 0.9rem;
+            }
+            .brand .tagline {
+                font-size: 0.6rem;
+            }
+            .grid-3 {
+                grid-template-columns: 1fr;
+            }
+            .grid-4 {
+                grid-template-columns: 1fr 1fr;
+            }
+            .unggulan-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            .timeline-grid {
+                grid-template-columns: 1fr 1fr;
             }
             .pricing-card .hosting-spec .spec-grid {
                 grid-template-columns: 1fr;
             }
+            .client-info .name {
+                font-size: 0.85rem;
+            }
+            .client-info .badge-client {
+                font-size: 0.6rem;
+                padding: 2px 10px;
+            }
+            .card {
+                padding: 12px 14px;
+            }
+            .card-problem ul li,
+            .card-solution ul li,
+            .card-dampak ul li,
+            .card-manfaat ul li {
+                font-size: 0.72rem;
+                padding: 2px 0 2px 18px;
+            }
+            .pricing-card .price {
+                font-size: 1.4rem;
+            }
+            .payment-item .persen {
+                font-size: 1.3rem;
+            }
+            .contact-item {
+                font-size: 0.7rem;
+                flex-wrap: wrap;
+            }
+            .bg-warning,
+            .bg-info {
+                font-size: 0.72rem;
+                padding: 8px 12px;
+            }
+            .text-muted {
+                font-size: 0.78rem;
+            }
         }
 
-        .text-muted {
-            color: #6a7a8d;
+        @media (pointer: coarse) {
+            .btn-wa {
+                padding: 14px 12px;
+                font-size: 0.95rem;
+            }
+            .btn-wa.outline-wa {
+                padding: 14px 12px;
+            }
+            .pricing-card ul li {
+                padding: 6px 0 6px 24px;
+            }
+            .contact-item a {
+                padding: 4px 0;
+            }
         }
-        .mt-8 {
-            margin-top: 8px;
-        }
-        .mb-8 {
-            margin-bottom: 8px;
-        }
-        .text-small {
-            font-size: 0.85rem;
-            color: #5f6f82;
+
+        @media (max-width: 768px) and (orientation: landscape) {
+            .grid-2 {
+                grid-template-columns: 1fr 1fr;
+            }
+            .pricing-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            .unggulan-grid {
+                grid-template-columns: 1fr 1fr 1fr;
+            }
+            .timeline-grid {
+                grid-template-columns: 1fr 1fr 1fr;
+            }
         }
     </style>
 </head>
@@ -781,7 +1237,7 @@
                 <img src="Logo Karya Digital Mandiri 2.png" alt="CV. Karya Digital Mandiri" class="logo-img" />
                 <div>
                     <div class="logo-text">CV. <span>KARYA DIGITAL</span> MANDIRI</div>
-                    <div class="tagline">Web Development &amp; Digital Marketing Solutions</div>
+                    <span class="tagline">Web Development &amp; Digital Marketing Solutions</span>
                 </div>
             </div>
             <div class="badge-proposal">Proposal Resmi</div>
@@ -808,17 +1264,19 @@
                 Berdasarkan observasi dan diskusi awal, terdapat beberapa kendala operasional yang dihadapi:
             </p>
 
-            <div class="problem-solution-grid">
-                <div class="card-ps">
-                    <h3>📂 Data Tersebar &amp; Tidak Terstruktur</h3>
+            <div class="grid-2">
+                <div class="card card-problem">
+                    <div class="icon">📂</div>
+                    <h4>Data Tersebar &amp; Tidak Terstruktur</h4>
                     <ul>
                         <li>Data calon tenaga kerja masih dikelola secara manual (Excel, kertas, file terpisah).</li>
                         <li>Sulit mencari kandidat berdasarkan kriteria spesifik (skill, usia, lokasi).</li>
                         <li>Risiko kehilangan data atau duplikasi data cukup tinggi.</li>
                     </ul>
                 </div>
-                <div class="card-ps">
-                    <h3>⏳ Proses Lambat &amp; Kurang Efisien</h3>
+                <div class="card card-problem">
+                    <div class="icon">⏳</div>
+                    <h4>Proses Lambat &amp; Kurang Efisien</h4>
                     <ul>
                         <li>Proses rekrutmen dan penempatan memakan waktu berhari-hari.</li>
                         <li>Tidak ada sistem yang terintegrasi antara pendaftaran, seleksi, dan penempatan.</li>
@@ -840,19 +1298,19 @@
                 Jika masalah di atas tidak segera diatasi, dampak negatif yang akan dirasakan:
             </p>
 
-            <div class="problem-solution-grid">
-                <div class="card-ps" style="border-left-color:#ef4444; background:#fef2f2;">
-                    <h3>📉 Kehilangan Peluang &amp; Pendapatan</h3>
+            <div class="grid-2">
+                <div class="card card-dampak">
+                    <h4>📉 Kehilangan Peluang &amp; Pendapatan</h4>
                     <ul>
                         <li><strong>Kehilangan kandidat potensial</strong> karena data tidak terkelola dengan baik.</li>
                         <li><strong>Kehilangan kepercayaan klien</strong> (PT ABC) karena respons lambat dan data tidak akurat.</li>
                         <li><strong>Potensi penurunan pendapatan</strong> karena proses penempatan yang tidak optimal.</li>
                     </ul>
                 </div>
-                <div class="card-ps" style="border-left-color:#ef4444; background:#fef2f2;">
-                    <h3>⚠️ Risiko Operasional &amp; Hukum</h3>
+                <div class="card card-dampak">
+                    <h4>⚠️ Risiko Operasional &amp; Hukum</h4>
                     <ul>
-                        <li><strong>Risiko kontrak berakhir tanpa perpanjangan</strong> karena tidak ada notifikasi otomatis.</li>
+                        <li><strong>Risiko kontrak berakhir tanpa perpanjangan</strong> karena tidak ada sistem pengingat.</li>
                         <li><strong>Administrasi gaji/insentif rentan kesalahan</strong> dan tidak transparan.</li>
                         <li><strong>Kurangnya laporan profesional</strong> untuk presentasi ke manajemen dan mitra.</li>
                     </ul>
@@ -872,9 +1330,10 @@
                 Kami menawarkan solusi digital terintegrasi untuk mengatasi seluruh permasalahan di atas:
             </p>
 
-            <div class="problem-solution-grid">
-                <div class="card-ps solution">
-                    <h3>🌐 Website Company Profile</h3>
+            <div class="grid-2">
+                <div class="card card-solution">
+                    <div class="icon">🌐</div>
+                    <h4>Website Company Profile</h4>
                     <ul>
                         <li><strong>Landing Page Profesional:</strong> Tampilan modern yang mencerminkan kredibilitas yayasan.</li>
                         <li><strong>Formulir Pendaftaran Online:</strong> Calon tenaga kerja bisa mendaftar langsung dari website.</li>
@@ -882,13 +1341,14 @@
                         <li><strong>Optimasi SEO:</strong> Meningkatkan visibilitas yayasan di mesin pencari.</li>
                     </ul>
                 </div>
-                <div class="card-ps solution">
-                    <h3>📊 Sistem Manajemen Tenaga Kerja</h3>
+                <div class="card card-solution">
+                    <div class="icon">📊</div>
+                    <h4>Sistem Manajemen Tenaga Kerja</h4>
                     <ul>
                         <li><strong>Database Terpusat:</strong> Semua data kandidat tersimpan rapi dan mudah diakses.</li>
                         <li><strong>Pencarian Cerdas:</strong> Temukan kandidat berdasarkan skill, usia, dan status dalam detik.</li>
-                        <li><strong>Modul Kontrak &amp; Notifikasi:</strong> Peringatan otomatis 30 &amp; 7 hari sebelum kontrak habis.</li>
-                        <li><strong>Modul Payroll:</strong> Perhitungan gaji dan insentif otomatis, akurat, dan transparan.</li>
+                        <li><strong>Database terpusat dengan pencarian cepat</strong> berdasarkan skill, usia, dan status ketersediaan.</li>
+                        
                     </ul>
                 </div>
             </div>
@@ -906,42 +1366,45 @@
                 Dengan mengadopsi solusi digital ini, LPK PT. PUTRA BALARAJA BERKAH akan mendapatkan:
             </p>
 
-            <div class="problem-solution-grid">
-                <div class="card-ps" style="border-left-color:#f59e0b; background:#fffbeb;">
-                    <h3>🚀 Efisiensi &amp; Produktivitas</h3>
+            <div class="grid-2">
+                <div class="card card-manfaat">
+                    <h4>🚀 Efisiensi &amp; Produktivitas</h4>
                     <ul>
                         <li>Proses rekrutmen yang sebelumnya <strong>berhari-hari menjadi hitungan menit</strong>.</li>
-                        <li>Administrasi kontrak dan gaji <strong>otomatis dan akurat</strong>.</li>
+                        <li><strong>Semua data tenaga kerja tersimpan rapi</strong> dan mudah diakses kapan saja.</li>
                         <li>Tim yayasan bisa <strong>fokus pada pengembangan bisnis</strong>, bukan administrasi manual.</li>
                     </ul>
                 </div>
-                <div class="card-ps" style="border-left-color:#f59e0b; background:#fffbeb;">
-                    <h3>💎 Kredibilitas &amp; Kepercayaan</h3>
+                <div class="card card-manfaat">
+                    <h4>💎 Kredibilitas &amp; Kepercayaan</h4>
                     <ul>
                         <li><strong>Website profesional</strong> meningkatkan citra yayasan di mata klien korporat.</li>
-                        <li><strong>Data yang terintegrasi</strong> memudahkan pelaporan dan audit.</li>
-                        <li><strong>Notifikasi otomatis</strong> memastikan tidak ada kontrak yang terlewat.</li>
+                        <li><strong>Data yang terintegrasi</strong> memudahkan pelaporan dan pengambilan keputusan.</li>
+                        <li><strong>Laporan yang akurat</strong> memastikan transparansi dan profesionalisme.</li>
                     </ul>
                 </div>
             </div>
 
             <!-- Keunggulan Grid -->
-            <div class="unggulan-grid" style="margin-top:30px;">
+            <div class="unggulan-grid" style="margin-top:24px;">
                 <div class="unggulan-item">
                     <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <circle cx="11" cy="11" r="8" />
                         <line x1="21" y1="21" x2="16.65" y2="16.65" />
                     </svg>
                     <h4>Pencarian Cerdas</h4>
-                    <p>Temukan kandidat berdasarkan skill, usia, lokasi &amp; ketersediaan dalam hitungan detik.</p>
+                    <p>Temukan kandidat dalam detik</p>
                 </div>
                 <div class="unggulan-item">
                     <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <circle cx="12" cy="12" r="10" />
-                        <polyline points="12 6 12 12 16 14" />
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                        <polyline points="14 2 14 8 20 8" />
+                        <line x1="16" y1="13" x2="8" y2="13" />
+                        <line x1="16" y1="17" x2="8" y2="17" />
+                        <polyline points="10 9 9 9 8 9" />
                     </svg>
-                    <h4>Notifikasi Otomatis</h4>
-                    <p>Peringatan 30 &amp; 7 hari sebelum kontrak berakhir, tidak ada yang terlewat.</p>
+                    <h4>Database Terpusat</h4>
+                    <p>Semua data dalam satu sistem</p>
                 </div>
                 <div class="unggulan-item">
                     <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -951,7 +1414,7 @@
                         <rect x="14" y="14" width="7" height="7" rx="1" />
                     </svg>
                     <h4>Dashboard Real-time</h4>
-                    <p>Pantau jumlah tenaga kerja tersedia, ditempatkan, dan tagihan langsung dari satu layar.</p>
+                    <p>Pantau semua dari satu layar</p>
                 </div>
                 <div class="unggulan-item">
                     <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -959,7 +1422,7 @@
                         <path d="M7 11V7a5 5 0 0 1 10 0v4" />
                     </svg>
                     <h4>Keamanan Data</h4>
-                    <p>Multi-level user &amp; enkripsi data pribadi sesuai standar perlindungan data.</p>
+                    <p>Multi-level user &amp; enkripsi</p>
                 </div>
                 <div class="unggulan-item">
                     <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -967,7 +1430,7 @@
                         <line x1="12" y1="18" x2="12.01" y2="18" />
                     </svg>
                     <h4>Responsif &amp; Modern</h4>
-                    <p>Tampilan website &amp; sistem diakses dari desktop, tablet, maupun smartphone.</p>
+                    <p>Akses dari semua perangkat</p>
                 </div>
                 <div class="unggulan-item">
                     <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -978,7 +1441,7 @@
                         <polyline points="10 9 9 9 8 9" />
                     </svg>
                     <h4>Laporan Profesional</h4>
-                    <p>Cetak laporan penempatan, kontrak, dan payroll untuk presentasi ke manajemen &amp; klien.</p>
+                    <p>Untuk manajemen &amp; klien</p>
                 </div>
             </div>
         </div>
@@ -995,121 +1458,172 @@
 
             <div class="pricing-grid">
 
-                <!-- PAKET BRONZE -->
+                <!-- ===== PAKET BISNIS ===== -->
                 <div class="pricing-card">
-                    <h3>🥉 Bronze</h3>
-                    <div class="price">Rp 4.900.000 <small>/ satu kali</small></div>
-                    <div class="desc-price">Company Profile Landing Page</div>
+                    <h3>📋 Paket Bisnis</h3>
+                    <div class="price">Rp 8.900.000 <small>/ satu kali</small></div>
+                    <div class="desc-price">Landing Page Profesional + Formulir Pendaftaran</div>
+
                     <ul>
-                        <li>Design modern &amp; responsif (5 halaman)</li>
-                        <li>Formulir pendaftaran calon tenaga kerja</li>
-                        <li>Integrasi Google Maps lokasi yayasan</li>
-                        <li>Optimasi SEO Dasar</li>
-                        <li>1 bulan support &amp; maintenance</li>
+                        <li><strong>🏗️ Desain &amp; Pengembangan</strong></li>
+                        <li style="padding-left:32px; font-size:0.78rem;">Desain Modern &amp; Responsif (Desktop, Tablet, HP)</li>
+                        <li style="padding-left:32px; font-size:0.78rem;">5 Halaman Utama (Beranda, Profil, Layanan, Kontak, Formulir)</li>
+                        <li style="padding-left:32px; font-size:0.78rem;">Custom UI/UX sesuai branding yayasan</li>
+                        <li style="padding-left:32px; font-size:0.78rem;">Animasi Halus &amp; Optimasi Kecepatan</li>
+
+                        <li style="margin-top:4px;"><strong>📝 Konten &amp; Informasi</strong></li>
+                        <li style="padding-left:32px; font-size:0.78rem;">Halaman Profil Yayasan (Visi, Misi, Sejarah)</li>
+                        <li style="padding-left:32px; font-size:0.78rem;">Halaman Layanan Penyaluran Tenaga Kerja</li>
+                        <li style="padding-left:32px; font-size:0.78rem;">Halaman Kontak (Alamat, Map, Telepon, Email)</li>
+                        <li style="padding-left:32px; font-size:0.78rem;">Galeri Foto (10-15 foto kegiatan)</li>
+                        <li style="padding-left:32px; font-size:0.78rem;">Testimoni (3-5 testimoni mitra/tenaga kerja)</li>
+                        <li style="padding-left:32px; font-size:0.78rem;">FAQ (Pertanyaan Umum)</li>
+
+                        <li style="margin-top:4px;"><strong>📋 Formulir &amp; Data</strong></li>
+                        <li style="padding-left:32px; font-size:0.78rem;">Formulir Pendaftaran Online</li>
+                        <li style="padding-left:32px; font-size:0.78rem;">Validasi Data Otomatis</li>
+                        <li style="padding-left:32px; font-size:0.78rem;">Notifikasi Email saat ada pendaftaran baru</li>
+                        <li style="padding-left:32px; font-size:0.78rem;">Export Data ke Excel</li>
+                        <li style="padding-left:32px; font-size:0.78rem;">Rekap Data Pendaftar per Periode</li>
+
+                        <li style="margin-top:4px;"><strong>🔍 SEO &amp; Visibilitas</strong></li>
+                        <li style="padding-left:32px; font-size:0.78rem;">SEO Dasar (Judul, Meta Deskripsi, Heading)</li>
+                        <li style="padding-left:32px; font-size:0.78rem;">Google Maps Integration</li>
+                        <li style="padding-left:32px; font-size:0.78rem;">Social Media Integration (IG, FB, LinkedIn)</li>
+
+                        <li style="margin-top:4px;"><strong>📱 Mobile &amp; Akses</strong></li>
+                        <li style="padding-left:32px; font-size:0.78rem;">Mobile-Friendly (tampilan sempurna di HP)</li>
+                        <li style="padding-left:32px; font-size:0.78rem;">WhatsApp Integration (tombol chat langsung)</li>
+
+                        <li style="margin-top:4px;"><strong>🎓 Support</strong></li>
+                        <li style="padding-left:32px; font-size:0.78rem;">1 Bulan Support &amp; Maintenance</li>
+                        <li style="padding-left:32px; font-size:0.78rem;">Dokumentasi Penggunaan</li>
+                        <li style="padding-left:32px; font-size:0.78rem;">Pelatihan Dasar (1 sesi)</li>
                     </ul>
 
                     <div class="hosting-spec">
-                        <div class="title">🖥️ Spesifikasi Hosting</div>
+                        <div class="title">🖥️ Spesifikasi Hosting (Shared)</div>
                         <div class="spec-grid">
                             <span>20 GB SSD</span>
                             <span>1 GB RAM</span>
                             <span>Unlimited Email Account</span>
                             <span>Unlimited Inodes</span>
                             <span>Unlimited Hosted Domain</span>
-                            <span>Gratis domain .BIZ.ID / .NET</span>
+                            <span>Gratis domain .COM / .ID</span>
                             <span>Gratis SSL</span>
                             <span>Built-in Anti-Spam</span>
                             <span>Acronis Backup</span>
+                        </div>
+                        <div class="email-benefit">
+                            <span class="email-icon">📧</span>
+                            <span class="email-text">
+                                <strong>Email Bisnis @Domain Anda</strong>
+                                <small>— info@putra-balaraja.com, hrd@putra-balaraja.com, dll.</small>
+                            </span>
                         </div>
                         <div class="desc-spec">
                             Performa stabil dan fleksibel, dirancang untuk pengelolaan banyak website sekaligus dengan fitur lengkap.
                         </div>
                     </div>
 
-                    <a href="https://wa.me/6285782030090?text=Halo%20CV.%20Karya%20Digital%20Mandiri%2C%20saya%20tertarik%20dengan%20PAKET%20BRONZE%20Company%20Profile.%20Mohon%20informasi%20lebih%20lanjut." target="_blank" class="btn-wa outline-wa">
+                    <a href="https://wa.me/6285782030090?text=Halo%20CV.%20Karya%20Digital%20Mandiri%2C%20saya%20tertarik%20dengan%20PAKET%20BISNIS%20Company%20Profile.%20Mohon%20informasi%20lebih%20lanjut." target="_blank" class="btn-wa outline-wa">
                         <span class="wa-icon">💬</span> Pilih Paket via WhatsApp
                     </a>
                 </div>
 
-                <!-- PAKET SILVER (POPULAR) -->
+                <!-- ===== PAKET ENTERPRISE (POPULAR) ===== -->
                 <div class="pricing-card popular">
-                    <h3>🥈 Silver</h3>
-                    <div class="price">Rp 8.500.000 <small>/ satu kali</small></div>
-                    <div class="desc-price">Company Profile + Database Kandidat</div>
+                    <h3>🏢 Paket Enterprise</h3>
+                    <div class="price">Rp 14.250.000 <small>/ satu kali</small></div>
+                    <div class="desc-price">
+                        Company Profile + Database Kandidat
+                        <span class="badge-include">🎁 Include Company Profile PDF &amp; PPT senilai Rp 3.250.000</span>
+                    </div>
+
                     <ul>
-                        <li>Semua fitur Bronze</li>
-                        <li>Dashboard admin untuk kelola data kandidat</li>
-                        <li>Pencarian &amp; filter kandidat (skill, usia, status)</li>
-                        <li>Export data ke Excel</li>
-                        <li>Integrasi dengan sistem manajemen (kelanjutan)</li>
-                        <li>3 bulan support &amp; maintenance</li>
+                        <li><strong>🏗️ Desain &amp; Pengembangan</strong></li>
+                        <li style="padding-left:32px; font-size:0.78rem;">Desain Premium &amp; Responsif (Desktop, Tablet, HP)</li>
+                        <li style="padding-left:32px; font-size:0.78rem;">7 Halaman Utama (Beranda, Profil, Layanan, Kontak, Formulir, Database, Dashboard)</li>
+                        <li style="padding-left:32px; font-size:0.78rem;">Custom UI/UX Premium eksklusif</li>
+                        <li style="padding-left:32px; font-size:0.78rem;">Animasi &amp; Interaksi Premium</li>
+                        <li style="padding-left:32px; font-size:0.78rem;">Optimasi Kecepatan Super Cepat</li>
+
+                        <li style="margin-top:4px;"><strong>📝 Konten &amp; Informasi</strong></li>
+                        <li style="padding-left:32px; font-size:0.78rem;">Semua fitur Paket Bisnis</li>
+                        <li style="padding-left:32px; font-size:0.78rem;">Halaman Mitra Perusahaan (Daftar PT ABC, dll)</li>
+                        <li style="padding-left:32px; font-size:0.78rem;">Halaman Karir / Lowongan Kerja</li>
+                        <li style="padding-left:32px; font-size:0.78rem;">Halaman Berita / Kegiatan Terbaru</li>
+                        <li style="padding-left:32px; font-size:0.78rem;">Halaman Penghargaan &amp; Sertifikasi</li>
+                        <li style="padding-left:32px; font-size:0.78rem;">Galeri Foto &amp; Video (20-30 foto + video profil)</li>
+                        <li style="padding-left:32px; font-size:0.78rem;">Testimoni Lengkap (10+ testimoni)</li>
+
+                        <li style="margin-top:4px;"><strong>📋 Formulir &amp; Data</strong></li>
+                        <li style="padding-left:32px; font-size:0.78rem;">Semua fitur Paket Bisnis</li>
+                        <li style="padding-left:32px; font-size:0.78rem;">Formulir Pendaftaran Lanjutan (Upload Dokumen: KTP, Ijazah, Sertifikat)</li>
+                        <li style="padding-left:32px; font-size:0.78rem;">Formulir Permintaan Tenaga Kerja (untuk perusahaan mitra)</li>
+                        <li style="padding-left:32px; font-size:0.78rem;">Tracking Status Pendaftaran (calon pekerja cek status)</li>
+
+                        <li style="margin-top:4px;"><strong>🗂️ Database Kandidat</strong></li>
+                        <li style="padding-left:32px; font-size:0.78rem;">Database Tenaga Kerja Terpusat</li>
+                        <li style="padding-left:32px; font-size:0.78rem;">Dashboard Admin Database</li>
+                        <li style="padding-left:32px; font-size:0.78rem;">Pencarian &amp; Filter Canggih (skill, usia, status, lokasi)</li>
+                        <li style="padding-left:32px; font-size:0.78rem;">Export Data ke Excel / CSV</li>
+                        <li style="padding-left:32px; font-size:0.78rem;">Import Data dari Excel (migrasi data lama)</li>
+                        <li style="padding-left:32px; font-size:0.78rem;">Status Kandidat (Tersedia, Ditempatkan, Kontrak, Resign)</li>
+                        <li style="padding-left:32px; font-size:0.78rem;">Riwayat Kandidat (pendaftaran &amp; penempatan)</li>
+                        <li style="padding-left:32px; font-size:0.78rem;">Manajemen Dokumen (simpan KTP, Ijazah, dll)</li>
+
+                        <li style="margin-top:4px;"><strong>📊 Admin &amp; Manajemen</strong></li>
+                        <li style="padding-left:32px; font-size:0.78rem;">Dashboard Admin Lengkap</li>
+                        <li style="padding-left:32px; font-size:0.78rem;">Multi-user Access (tambah banyak admin)</li>
+                        <li style="padding-left:32px; font-size:0.78rem;">Role Management (atur hak akses per admin)</li>
+                        <li style="padding-left:32px; font-size:0.78rem;">Audit Log (catatan aktivitas admin)</li>
+
+                        <li style="margin-top:4px;"><strong>📄 Company Profile PDF &amp; PPT</strong></li>
+                        <li style="padding-left:32px; font-size:0.78rem;">Company Profile PDF (siap cetak/bagikan)</li>
+                        <li style="padding-left:32px; font-size:0.78rem;">Company Profile PPT (siap presentasi)</li>
+                        <li style="padding-left:32px; font-size:0.78rem;">Desain Profesional sesuai branding yayasan</li>
+
+                        <li style="margin-top:4px;"><strong>🎓 Support</strong></li>
+                        <li style="padding-left:32px; font-size:0.78rem;">6 Bulan Support &amp; Maintenance</li>
+                        <li style="padding-left:32px; font-size:0.78rem;">Dokumentasi Lengkap</li>
+                        <li style="padding-left:32px; font-size:0.78rem;">Pelatihan Tim (2 sesi)</li>
+                        <li style="padding-left:32px; font-size:0.78rem;">Video Tutorial</li>
                     </ul>
 
                     <div class="hosting-spec">
-                        <div class="title">🖥️ Spesifikasi Hosting</div>
+                        <div class="title">☁️ Spesifikasi Cloud Hosting</div>
                         <div class="spec-grid">
-                            <span>60 GB SSD</span>
-                            <span>1 GB RAM</span>
-                            <span>Unlimited Email Account</span>
+                            <span>50 GB Disk Space</span>
+                            <span>3 Core CPU Speed</span>
+                            <span>3 GB Physical Memory</span>
                             <span>Gratis domain .COM / .ID</span>
                             <span>Gratis SSL</span>
                             <span>Built-in Anti-Spam</span>
                             <span>Acronis Backup</span>
+                            <span>High Availability</span>
+                            <span>Auto Scalability</span>
+                            <span>Failover Otomatis</span>
+                        </div>
+                        <div class="email-benefit">
+                            <span class="email-icon">📧</span>
+                            <span class="email-text">
+                                <strong>Email Bisnis @Domain Anda</strong>
+                                <small>— info@putra-balaraja.com, hrd@putra-balaraja.com, dll.</small>
+                            </span>
                         </div>
                         <div class="desc-spec">
-                            Paket kelas atas dengan kapasitas besar dan fitur unggulan, cocok untuk kebutuhan bisnis dan skala proyek yang tumbuh pesat.
+                            <strong>Cloud Hosting Premium</strong> — Performa tinggi dengan ketersediaan 99,9%. Cocok untuk aplikasi bisnis yang memerlukan keandalan, kecepatan, dan skalabilitas. Server terdistribusi memastikan website tetap online meskipun terjadi lonjakan trafik.
                         </div>
                     </div>
 
-                    <a href="https://wa.me/6285782030090?text=Halo%20CV.%20Karya%20Digital%20Mandiri%2C%20saya%20tertarik%20dengan%20PAKET%20SILVER%20Company%20Profile.%20Mohon%20informasi%20lebih%20lanjut." target="_blank" class="btn-wa">
-                        <span class="wa-icon">💬</span> Pilih Paket via WhatsApp
-                    </a>
-                </div>
-
-                <!-- PAKET GOLD -->
-                <div class="pricing-card">
-                    <h3>🥇 Gold</h3>
-                    <div class="price">Rp 14.500.000 <small>/ satu kali</small></div>
-                    <div class="desc-price">Company Profile + Database + Modul Kontrak</div>
-                    <ul>
-                        <li>Semua fitur Silver</li>
-                        <li>Manajemen kontrak &amp; masa kerja</li>
-                        <li>Notifikasi otomatis (email &amp; dashboard)</li>
-                        <li>Tracking penempatan ke perusahaan klien</li>
-                        <li>Laporan penempatan &amp; kontrak</li>
-                        <li>6 bulan support &amp; maintenance</li>
-                    </ul>
-
-                    <div class="hosting-spec">
-                        <div class="title">🖥️ Spesifikasi VPS High Availability</div>
-                        <div class="spec-grid">
-                            <span>Storage NVME</span>
-                            <span>Processor AMD EPYC</span>
-                            <span>Jaminan Uptime 99,9%</span>
-                            <span>CPU : 4 Core</span>
-                            <span>Storage Space : 80 GB</span>
-                            <span>Virtual Memory : 4 GB</span>
-                            <span>Gratis domain .COM / .ID</span>
-                            <span>Gratis SSL</span>
-                            <span>Built-in Anti-Spam</span>
-                            <span>Acronis Backup</span>
-                        </div>
-                        <div class="desc-spec">
-                            Sesuai untuk aplikasi perbankan atau fintech yang memerlukan server aman untuk data dan akses tanpa gangguan. VPS High Availability memastikan ketersediaan tinggi dengan failover otomatis, ideal untuk aplikasi yang memerlukan performa super cepat dan andal.<br><br>
-                            <strong>Industri:</strong> Finance, Medical and Health, Manufacture dan Distribusi, E-Commerce.
-                        </div>
-                    </div>
-
-                    <a href="https://wa.me/6285782030090?text=Halo%20CV.%20Karya%20Digital%20Mandiri%2C%20saya%20tertarik%20dengan%20PAKET%20GOLD%20Company%20Profile.%20Mohon%20informasi%20lebih%20lanjut." target="_blank" class="btn-wa outline-wa">
+                    <a href="https://wa.me/6285782030090?text=Halo%20CV.%20Karya%20Digital%20Mandiri%2C%20saya%20tertarik%20dengan%20PAKET%20ENTERPRISE%20Company%20Profile.%20Mohon%20informasi%20lebih%20lanjut." target="_blank" class="btn-wa">
                         <span class="wa-icon">💬</span> Pilih Paket via WhatsApp
                     </a>
                 </div>
 
             </div>
-
-           <br>
-		   </br>
-		   
+        </div>
 
         <!-- ============================================================ -->
         <!-- ===== 6. TIMELINE IMPLEMENTASI ===== -->
@@ -1137,7 +1651,7 @@
                 <div class="timeline-item">
                     <div class="step">03</div>
                     <h4>Pengembangan &amp; Coding</h4>
-                    <p>Build website + sistem manajemen (sesuai paket)</p>
+                    <p>Build website sesuai paket yang dipilih</p>
                     <span class="durasi">14-21 Hari</span>
                 </div>
                 <div class="timeline-item">
@@ -1149,7 +1663,7 @@
                 <div class="timeline-item">
                     <div class="step">05</div>
                     <h4>Deploy &amp; Go-Live</h4>
-                    <p>Peluncuran website &amp; sistem ke publik</p>
+                    <p>Peluncuran website ke publik</p>
                     <span class="durasi">3 Hari</span>
                 </div>
                 <div class="timeline-item">
@@ -1160,8 +1674,8 @@
                 </div>
             </div>
 
-            <p style="text-align:center; margin-top:16px; font-size:0.9rem; color:#5f6f82;">
-                ⏱️ <strong>Total Estimasi:</strong> 25-35 Hari Kerja (tergantung kompleksitas paket yang dipilih)
+            <p class="text-center text-muted" style="margin-top:14px; font-size:0.85rem;">
+                ⏱️ <strong>Total Estimasi:</strong> 25-35 Hari Kerja (tergantung paket yang dipilih)
             </p>
         </div>
 
@@ -1188,7 +1702,7 @@
                     <div class="nomor">02</div>
                     <div class="persen"><span>30%</span></div>
                     <div class="label">Pembayaran Go-Live</div>
-                    <div class="value">Saat website &amp; sistem diluncurkan</div>
+                    <div class="value">Saat website diluncurkan</div>
                     <span class="badge-pay green">🟢 Tahap 2</span>
                 </div>
 
@@ -1201,34 +1715,102 @@
                 </div>
             </div>
 
-            <div style="margin-top:16px; background:#f0f7ff; border-radius:12px; padding:12px 20px; font-size:0.9rem; color:#1e3a6b; border:1px solid #d6e4f5; display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center;">
+            <div class="bg-info">
                 <span>💳 <strong>Metode Pembayaran:</strong> Transfer Bank (BCA / Mandiri) | Invoice via email</span>
-                <span style="font-size:0.8rem; background:#2563eb; color:#fff; padding:2px 14px; border-radius:20px;">Total 100%</span>
+                <span style="font-size:0.7rem; background:#2563eb; color:#fff; padding:2px 14px; border-radius:20px;">Total 100%</span>
             </div>
         </div>
 
         <!-- ============================================================ -->
-        <!-- ===== 8. SYARAT & KETENTUAN ===== -->
+        <!-- ===== 8. BIAYA TAHUNAN & MAINTENANCE (OPSIONAL) ===== -->
         <!-- ============================================================ -->
         <div class="section">
             <h2>
                 <span class="section-number">08</span>
+                Biaya Tahunan &amp; Maintenance (Opsional)
+            </h2>
+            <p class="text-muted" style="margin-bottom:6px;">
+                Biaya berikut berlaku mulai tahun kedua. Tahun pertama sudah <strong>GRATIS</strong> termasuk dalam paket.
+            </p>
+
+            <div class="renewal-grid">
+
+                <!-- Perpanjangan Hosting & Domain -->
+                <div class="renewal-card">
+                    <div class="title">🔄 Perpanjangan Hosting &amp; Domain</div>
+                    <table>
+                        <tr>
+                            <td class="label">Paket Bisnis (Shared Hosting)</td>
+                            <td class="value">Rp 2.350.000 / tahun</td>
+                        </tr>
+                        <tr>
+                            <td class="label">Paket Enterprise (Cloud Hosting)</td>
+                            <td class="value">Rp 3.750.000 / tahun</td>
+                        </tr>
+                        <tr>
+                            <td class="label">Domain .COM / .ID</td>
+                            <td class="value">Rp 250.000 / tahun</td>
+                        </tr>
+                    </table>
+                    <div class="note">
+                        ✅ SSL Certificate, Backup, dan Anti-Spam sudah termasuk dalam paket hosting.
+                    </div>
+                </div>
+
+                <!-- Paket Maintenance (Opsional) -->
+                <div class="renewal-card">
+                    <div class="title">🛠️ Paket Maintenance <span style="font-size:0.6rem; color:#059669; font-weight:600;">(Opsional)</span></div>
+                    <table>
+                        <tr>
+                            <td class="label">Basic Maintenance</td>
+                            <td class="value">Rp 600.000 / tahun</td>
+                        </tr>
+                        <tr style="font-size:0.72rem; color:#5f6f82;">
+                            <td colspan="2" style="padding-left:4px;">✓ Backup rutin • Update konten minor • Monitoring uptime</td>
+                        </tr>
+                        <tr>
+                            <td class="label">Premium Maintenance</td>
+                            <td class="value">Rp 1.200.000 / tahun</td>
+                        </tr>
+                        <tr style="font-size:0.72rem; color:#5f6f82;">
+                            <td colspan="2" style="padding-left:4px;">✓ Semua Basic + Support prioritas • Update sistem • Laporan bulanan</td>
+                        </tr>
+                    </table>
+                    <div class="note">
+                        💡 <strong>Catatan:</strong> Paket maintenance <strong>tidak wajib</strong>. Klien tetap bisa mengelola website sendiri dengan dokumentasi dan pelatihan yang diberikan.
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="bg-warning">
+                ⚠️ <strong>Informasi Penting:</strong> Biaya perpanjangan hosting dan domain mulai berlaku di <strong>tahun kedua</strong>. Tahun pertama sudah <strong>GRATIS</strong> termasuk dalam paket yang dipilih.
+            </div>
+        </div>
+
+        <!-- ============================================================ -->
+        <!-- ===== 9. SYARAT & KETENTUAN ===== -->
+        <!-- ============================================================ -->
+        <div class="section">
+            <h2>
+                <span class="section-number">09</span>
                 Syarat &amp; Ketentuan
             </h2>
             <p class="text-muted" style="margin-bottom:6px;">Ketentuan umum yang berlaku dalam kerja sama ini.</p>
 
             <div class="terms-grid">
                 <div>
-                    <h4>Untuk Klien (LPK PT. PUTRA BALARAJA BERKAH)</h4>
+                    <h4 style="font-size:0.9rem;">Untuk Klien (LPK PT. PUTRA BALARAJA BERKAH)</h4>
                     <ul>
                         <li>Menyediakan data &amp; konten (teks, foto, logo) maksimal <strong>5 hari kerja</strong> setelah kontrak ditandatangani.</li>
                         <li>Memberikan akses ke pihak terkait untuk keperluan koordinasi.</li>
                         <li>Melakukan pembayaran sesuai jadwal yang telah disepakati.</li>
                         <li>Memberikan feedback/approval desain maksimal <strong>3x revisi</strong> per tahap.</li>
+                        <li>Biaya perpanjangan hosting &amp; domain mulai berlaku di tahun kedua.</li>
                     </ul>
                 </div>
                 <div>
-                    <h4>Untuk CV. KARYA DIGITAL MANDIRI</h4>
+                    <h4 style="font-size:0.9rem;">Untuk CV. KARYA DIGITAL MANDIRI</h4>
                     <ul>
                         <li>Menyelesaikan proyek sesuai timeline yang telah disepakati.</li>
                         <li>Memberikan <strong>garansi 30 hari</strong> setelah Go-Live untuk perbaikan bug.</li>
@@ -1239,7 +1821,7 @@
                 </div>
             </div>
 
-            <div style="margin-top:14px; background:#fef9e7; border-radius:12px; padding:12px 20px; font-size:0.9rem; color:#7c6a2e; border:1px solid #f5e6b8;">
+            <div class="bg-warning">
                 ⚠️ <strong>Catatan Penting:</strong> Revisi di luar kesepakatan (lebih dari 3x per tahap) akan dikenakan biaya tambahan. Hosting &amp; domain tahun pertama sudah termasuk, tahun berikutnya menjadi tanggung jawab klien.
             </div>
         </div>
@@ -1249,11 +1831,11 @@
         <!-- ============================================================ -->
         <div class="footer-contact">
             <div>
-                <div style="font-weight:800; font-size:1.2rem; color:#0b1a2a; margin-bottom:6px;">CV. KARYA DIGITAL MANDIRI</div>
-                <div style="color:#4b5d71; font-size:0.9rem;">Web Development &amp; Digital Marketing</div>
+                <div style="font-weight:800; font-size:1rem; color:#0b1a2a; margin-bottom:4px;">CV. KARYA DIGITAL MANDIRI</div>
+                <div style="color:#4b5d71; font-size:0.78rem;">Web Development &amp; Digital Marketing</div>
             </div>
 
-            <div style="display:flex; flex-wrap:wrap; gap:16px 32px;">
+            <div style="display:flex; flex-wrap:wrap; gap:10px 20px;">
                 <div class="contact-item">
                     <span class="label">📞 WhatsApp</span>
                     <a href="https://wa.me/6285782030090" target="_blank" class="wa-link">+62 857 8203 0090</a>
@@ -1269,7 +1851,7 @@
             </div>
         </div>
 
-        <div style="margin-top:30px; text-align:center; font-size:0.8rem; color:#8b9bb0; border-top:1px solid #eef2f6; padding-top:22px;">
+        <div style="margin-top:24px; text-align:center; font-size:0.7rem; color:#8b9bb0; border-top:1px solid #eef2f6; padding-top:16px;">
             © 2025 CV. KARYA DIGITAL MANDIRI • Proposal ini bersifat rahasia dan hanya untuk keperluan presentasi.
         </div>
 
